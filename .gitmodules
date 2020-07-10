@@ -4,3 +4,6 @@
 [submodule "zcm_types"]
 	path = zcm_types
 	url = ssh://git@bb.niias:7999/ado/zcm_types.git
+[submodule "niias_srv_supply"]
+	path = niias_srv_supply
+	url = ssh://git@bb.niias:7999/tool/niias_srv_supply.git

@@ -1,0 +1,16 @@
+# Qt Build temporary files & folders
+build*
+!build.sh
+!build_all.sh
+*.txt.user
+*user*
+*.save
+
+# Temporary user configurations
+CMakeLists.txt.*
+
+# CLion temporary files & folders
+./idea*
+
+# Doxygen temporary files & folders
+doxygen*

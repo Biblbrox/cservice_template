@@ -109,33 +109,7 @@ Optional:<br />
 
 ### Configuration file setup
 
----
-
-**[main]**<br/>
-
-| Parameter | Description                                 | Type | Default|
-| :---      | :-----------------------------------------: | :--: | :----: |
-| debug     | Flag if need trace service info to log file | bool | *false*|
-
-<br/>
-
----
-
-**[receive]**<br/>
-
-| Parameter | Description                                 | Type  | Default|
-| :---      | :-----------------------------------------: | :---- | :----:  |
-| target    |                                             | string| *ipc*   |
-| prefix    |                                             |       |         |
-| channel   |                                             |       |         |
-
-<br/>
-
----
-
-**[send]**<br/>
-
----
+    ---
 
 ## [Release History](./HISTORY.md)
 

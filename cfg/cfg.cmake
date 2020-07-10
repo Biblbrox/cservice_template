@@ -1,10 +1,9 @@
 #========================================================================================
 
-INCLUDE_DIRECTORIES( config )
+INCLUDE_DIRECTORIES( cfg )
 
-set( CONFIG
-    config/config.h
-    config/config.cpp
+set( CFG
+    cfg/cservice_template.cfg
    )
 
 #========================================================================================
