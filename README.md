@@ -111,14 +111,14 @@ Optional:<br />
 
     ---
 
-## [Release History](./HISTORY.md)
+## [Release History](dox/HISTORY.md)
 
 ---
 
 ## Contributing
 
 1. Clone it (<ssh://git@bb.niias:7999/~d.leliuhin/cservice_template.git>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
+2. Create your feature branch (`git checkout -b feature/name`)
 3. Commit your changes (`git add . & git commit -m "Feature. Add some fooBar."`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request to `develop`
@@ -129,11 +129,11 @@ Optional:<br />
 
 Reach out to me at one of the following places!
 
-- Telegram at <a href="http://https://telegram.org" target="_blank">`@Author`</a>
-- Email at author@gmail.com.
+- Telegram at - <a href="http://https://telegram.org" target="_blank">`@DLeliuhin`</a>
+- Email at - dleliuhin@gmail.com.
 
 ---
 
-## [FAQ](./doc/FAQ.md)
+## [FAQ](doc/FAQ.md)
 
 ---

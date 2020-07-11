@@ -30,8 +30,7 @@ include( ${CMAKE_CURRENT_SOURCE_DIR}/zcm_types.cmake )
 
 include_directories( ${CMAKE_SOURCE_DIR} )
 
-include( ${CMAKE_CURRENT_SOURCE_DIR}/config/config.cmake )
-include( ${CMAKE_CURRENT_SOURCE_DIR}/defs/defs.cmake )
+include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
 
 #========================================================================================
 
