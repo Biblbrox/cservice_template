@@ -1,0 +1,9 @@
+[submodule "external/vlibs2"]
+	path = external/vlibs2
+	url = ssh://git@bb.niias:7999/~elapidae/vlibs2.git
+[submodule "external/zcm_types"]
+	path = external/zcm_types
+	url = ssh://git@bb.niias:7999/ado/zcm_types.git
+[submodule "external/niias_srv_supply"]
+	path = external/niias_srv_supply
+	url = ssh://git@bb.niias:7999/tool/niias_srv_supply.git
