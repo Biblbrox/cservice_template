@@ -21,29 +21,22 @@ set( CMAKE_CXX_STANDARD_REQUIRED ON )
 
 #========================================================================================
 
-include( ${CMAKE_CURRENT_SOURCE_DIR}/vlibs.cmake )
-include( ${VLIBS_DIR}/cmake/pthread.cmake )
-include( ${CMAKE_CURRENT_SOURCE_DIR}/niias_srv_supply/niias_srv_supply.cmake )
-include( ${CMAKE_CURRENT_SOURCE_DIR}/zcm_types.cmake )
+include( ${CMAKE_CURRENT_SOURCE_DIR}/external/external.cmake )
 
 #========================================================================================
 
 include_directories( ${CMAKE_SOURCE_DIR} )
 
-include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
+#include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
 
 #========================================================================================
 
 add_executable(
-    ${PROJECT_NAME}
+#    ${PROJECT_NAME}
 
-    ${CFG}
-    ${DEFS}
-    ${CONFIG}
-
-    ${V_HEADERS}
-    ${V_SOURCES}
-    ${ZCM_TYPES}
+#    ${CFG}
+#    ${DEFS}
+#    ${CONFIG}
 
     main.cpp
     )
