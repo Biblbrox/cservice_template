@@ -7,3 +7,6 @@
 [submodule "external/niias_srv_supply"]
 	path = external/niias_srv_supply
 	url = ssh://git@bb.niias:7999/tool/niias_srv_supply.git
+[submodule "external/vzcm"]
+	path = external/vzcm
+	url = ssh://git@bb.niias:7999/~elapidae/vzcm.git

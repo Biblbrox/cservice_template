@@ -2,6 +2,7 @@
  * \brief List of common definitions.
  *
  * \authors Dmitrii Leliuhin
+ * \date July 2020
 */
 
 //=======================================================================================

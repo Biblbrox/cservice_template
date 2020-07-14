@@ -2,17 +2,21 @@
  * \brief Entry app file.
  *
  * \authors Dmitrii Leliuhin
+ * \date July 2020
  *
  * Details.
  *
  */
 
 #include "config.h"
+#include "subscriber.h"
+#include "publisher.h"
 
 #include "niias_arguments.h"
 
 #include "vapplication.h"
 #include "vlog.h"
+#include "vzcm.h"
 
 #include <iostream>
 
@@ -32,13 +36,25 @@ using namespace std;
 int main( int argc, char **argv )
 {
     vapplication vapp;
+
     niias::arguments nargs( argc, argv );
 
     Config config( nargs.config_name() );
 
+    //-----------------------------------------------------------------------------------
+
     if ( config.main.debug )
         vlog::clear_executers();
     vlog::set_shared_log ( nargs.full_app() + ".log",  1e6, 5 );
+
+    //-----------------------------------------------------------------------------------
+
+    Subscriber subscriber( config );
+    Publisher publisher( config );
+
+    //-----------------------------------------------------------------------------------
+
+    vapp.poll();
 
     return EXIT_SUCCESS;
 }

@@ -2,6 +2,7 @@
  * \brief Config class implementation.
  *
  * \authors Dmitrii Leliuhin
+ * \date July 2020
 */
 
 //=======================================================================================

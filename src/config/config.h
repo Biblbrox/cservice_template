@@ -4,6 +4,7 @@
  * Configuration file parser.
  *
  * \authors Dmitrii Leliuhin
+ * \date July 2020
 */
 
 //=======================================================================================
@@ -53,7 +54,7 @@ public:
     /*! \struct Receive
      * \param target Inter Process Communications.
      * \param prefix ZCM in channel prefix.
-     * \param channel ZCM in channel prefix.
+     * \param channel ZCM in channel name.
      * \param str Struct name.
     */
     struct Receive
@@ -64,11 +65,11 @@ public:
 
         /*!
          * \fn std::string ch() const
-         * \return Concatenated target and prefix strings.
+         * \return Concatenated prefix and channel strings.
         */
         std::string ch() const
         {
-            return vcat( target, prefix );
+            return vcat( prefix, channel );
         }
 
         std::string str { "receive" };
@@ -80,7 +81,7 @@ public:
     /*! \struct Send
      * \param target Inter Process Communications.
      * \param prefix ZCM out channel prefix.
-     * \param channel ZCM out channel prefix.
+     * \param channel ZCM out channel name.
      * \param str Struct name.
     */
     struct Send
@@ -91,11 +92,11 @@ public:
 
         /*!
          * \fn std::string ch() const
-         * \return Concatenated target and prefix strings.
+         * \return Concatenated prefix and channell strings.
         */
         std::string ch() const
         {
-            return vcat( target, prefix );
+            return vcat( prefix, channel );
         }
 
         std::string str { "send" };
@@ -106,7 +107,7 @@ public:
 
 private:
 
-    /*! \param _settings Container of configuration file groups and subgroups. */
+    //! \param _settings Container of configuration file groups and subgroups.
     vsettings _settings;
 
     //-----------------------------------------------------------------------------------
