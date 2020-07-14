@@ -27,18 +27,16 @@ include( ${CMAKE_CURRENT_SOURCE_DIR}/external/external.cmake )
 
 include_directories( ${CMAKE_SOURCE_DIR} )
 
-#include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
+include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
 
 #========================================================================================
 
 add_executable(
-#    ${PROJECT_NAME}
-
-#    ${CFG}
-#    ${DEFS}
-#    ${CONFIG}
-
+    ${PROJECT_NAME}
+    ${CFG}
+    ${SRC}
     main.cpp
+    ${EXTERNAL}
     )
 
 target_link_libraries( ${PROJECT_NAME} ${V_LIBRARIES} -ldl )

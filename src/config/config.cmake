@@ -1,10 +1,10 @@
 #========================================================================================
 
-INCLUDE_DIRECTORIES( config )
+include_directories( ${CMAKE_CURRENT_LIST_DIR} )
 
 set( CONFIG
-    config/config.h
-    config/config.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/config.h
+    ${CMAKE_CURRENT_LIST_DIR}/config.cpp
    )
 
 #========================================================================================

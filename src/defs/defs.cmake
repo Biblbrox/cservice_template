@@ -1,9 +1,9 @@
 #========================================================================================
 
-INCLUDE_DIRECTORIES( defs )
+include_directories( ${CMAKE_CURRENT_LIST_DIR} )
 
 set( DEFS
-    defs/defs.h
+    ${CMAKE_CURRENT_LIST_DIR}/defs.h
    )
 
 #========================================================================================
