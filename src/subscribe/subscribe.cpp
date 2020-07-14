@@ -1,14 +1,14 @@
-/*! \file subscriber.cpp
- * \brief Subscriber class implementation.
+/*! \file subscribe.cpp
+ * \brief Subscribe class implementation.
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
 */
 
-#include "subscriber.h"
+#include "subscribe.h"
 
 //=======================================================================================
-Subscriber::Subscriber( const Config& conf )
+Subscribe::Subscribe( const Config& conf )
     : _conf ( std::move( conf )   )
     , _zcm  ( conf.receive.target )
 {

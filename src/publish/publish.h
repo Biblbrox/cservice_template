@@ -1,7 +1,7 @@
-/*! \file publisher.h
- * \brief Publisher class interface.
+/*! \file publish.h
+ * \brief Publish class interface.
  *
- * ZCM message publisher.
+ * ZCM message publish.
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
@@ -9,26 +9,38 @@
 
 //=======================================================================================
 
-#ifndef PUBLISHER_H
-#define PUBLISHER_H
+#ifndef PUBLISH_H
+#define PUBLISH_H
 
 #include "config.h"
 
 #include "vzcm.h"
+#include "vsignal.h"
 
 #include "ZcmService.hpp"
 
 //=======================================================================================
-/*! \class Publisher
+/*! \class Publish
  * \brief ZCM message publisher class.
  * \details ...
  */
-class Publisher
+class Publish
 {
 public:
 
-    Publisher( const Config& conf );
-    ~Publisher() = default;
+    /*!
+     * \brief constructor.
+     * \param fname Path to configuration file.
+     * \details Initialize _zcm node
+    */
+    Publish( const Config& conf );
+
+    //! \brief default destructor.
+    ~Publish() = default;
+
+    //-----------------------------------------------------------------------------------
+
+    void send( const ZcmService& data );
 
     //-----------------------------------------------------------------------------------
 
@@ -42,4 +54,4 @@ private:
 };
 //=======================================================================================
 
-#endif // PUBLISHER_H
+#endif // PUBLISH_H

@@ -1,5 +1,5 @@
-/*! \file subscriber.h
- * \brief Subscriber class interface.
+/*! \file subscribe.h
+ * \brief Subscribe class interface.
  *
  * ZCM message subscriber.
  *
@@ -9,27 +9,39 @@
 
 //=======================================================================================
 
-#ifndef SUBSCRIBER_H
-#define SUBSCRIBER_H
+#ifndef SUBSCRIBE_H
+#define SUBSCRIBE_H
 
 #include "config.h"
 
 #include "vzcm.h"
+#include "vsignal.h"
 
 #include "ZcmService.hpp"
 #include "ZcmLivoxScan.hpp"
 
 //=======================================================================================
-/*! \class Subscriber
+/*! \class Subscribe
  * \brief ZCM message subscriber class.
  * \details ...
  */
-class Subscriber
+class Subscribe
 {
 public:
 
-    Subscriber( const Config& conf );
-    ~Subscriber() = default;
+    /*!
+     * \brief constructor.
+     * \param fname Path to configuration file.
+     * \details Initialize _zcm node
+    */
+    Subscribe( const Config& conf );
+
+    //! \brief default destructor.
+    ~Subscribe() = default;
+
+    //-----------------------------------------------------------------------------------
+
+    vsignal<ZcmService> received;
 
     //-----------------------------------------------------------------------------------
 
@@ -42,7 +54,7 @@ private:
     vzcm _zcm;
 
     //! \param _zcm ZCM received messages
-    ZcmService _data;
+    vsignal<ZcmService> _data;
 };
 //=======================================================================================
 

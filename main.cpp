@@ -9,8 +9,8 @@
  */
 
 #include "config.h"
-#include "subscriber.h"
-#include "publisher.h"
+#include "subscribe.h"
+#include "publish.h"
 
 #include "niias_arguments.h"
 
@@ -49,8 +49,8 @@ int main( int argc, char **argv )
 
     //-----------------------------------------------------------------------------------
 
-    Subscriber subscriber( config );
-    Publisher publisher( config );
+    Subscribe subscriber( config );
+    Publish publisher( config );
 
     //-----------------------------------------------------------------------------------
 
