@@ -7,21 +7,11 @@ Service for ...
 
 ## Task
 
-The task consists of several steps:
-
-1. Physical connection of the sensor via RS 485 to USB converter.
-2. Software connection to the port and capture lidar points.
-3. Interpretation of data in the form of determining deviations from normalized values.
-4. The issuance of the result of the occupation of the zone on the UDP at the localhost port 9000. (0 - no obstacles, 1 - are obstacles, 2 - wrong lidar connection).
 
 ---
 
 ## Dependencies
 
-- GCC [5.x.x]
-- CMake [3.2]
-- GoogleTest
-- LibUSB
 
 ---
 
@@ -117,8 +107,10 @@ Optional:<br />
 
 ## Contributing
 
-1. Clone it (<ssh://git@bb.niias:7999/~d.leliuhin/cservice_template.git>)
-2. Create your feature branch (`git checkout -b feature/name`)
+1. Fork it (<ssh://git@bb.niias:7999/~d.leliuhin/cservice_template.git>)
+2. Create your fix or feature branch (`git checkout -b feature/name`)
+3. Make changes
+4. Correct Readmes for whole directories.
 3. Commit your changes (`git add . & git commit -m "Feature. Add some fooBar."`)
 4. Push to the branch (`git push origin feature/fooBar`)
 5. Create a new Pull Request to `develop`

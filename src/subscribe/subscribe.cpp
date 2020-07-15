@@ -7,6 +7,8 @@
 
 #include "subscribe.h"
 
+#include "vtime_point.h"
+
 //=======================================================================================
 Subscribe::Subscribe( const Config& conf )
     : _conf ( std::move( conf )   )
@@ -15,7 +17,7 @@ Subscribe::Subscribe( const Config& conf )
     _zcm.subscribe<ZcmLivoxScan>( conf.receive.ch(),
                                   [ this ]( const ZcmLivoxScan& msg )
     {
-        _data = msg.service;
+        received( vtime_point::now().microseconds().count(), msg.service );
     } );
 }
 //=======================================================================================

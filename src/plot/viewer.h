@@ -1,7 +1,7 @@
-/*! \file publish.h
- * \brief Publish class interface.
+/*! \file viewer.h
+ * \brief Viewer class interface.
  *
- * ZCM message publish.
+ * Data PCL viewer.
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
@@ -9,50 +9,43 @@
 
 //=======================================================================================
 
-#ifndef PUBLISH_H
-#define PUBLISH_H
+#ifndef PLOT_H
+#define PLOT_H
 
 #include "config.h"
 
-#include "vzcm.h"
 #include "vsignal.h"
 
-#include "ZcmService.hpp"
+#include <pcl/visualization/pcl_visualizer.h>
+
+#include <string>
 
 //=======================================================================================
-/*! \class Publish
- * \brief ZCM message publisher class.
+/*! \class Viewer
+ * \brief Data PCL viewer.
  * \details ...
  */
-class Publish
+class Viewer
 {
 public:
 
     /*!
      * \brief constructor.
-     * \param fname Path to configuration file.
+     * \param name Path to configuration file.
      * \details Initialize _zcm node
     */
-    Publish( const Config& conf );
+    Viewer( const std::string name );
 
     //! \brief default destructor.
-    ~Publish() = default;
-
-    //-----------------------------------------------------------------------------------
-
-    void send( const int64_t rec, const ZcmService& data );
+    ~Viewer() = default;
 
     //-----------------------------------------------------------------------------------
 
 private:
 
-    //! \param _conf configuration parameters
-    Config _conf;
-
-    //! \param _zcm ZCM node
-    vzcm _zcm;
+    pcl::visualization::PCLVisualizer _viewer;
 
 };
 //=======================================================================================
 
-#endif // PUBLISH_H
+#endif // PLOT_H

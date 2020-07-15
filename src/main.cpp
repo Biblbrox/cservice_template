@@ -18,9 +18,11 @@
 #include "vlog.h"
 #include "vzcm.h"
 
-#include <iostream>
+#ifdef GUI
+#include "viewer.h"
+#endif
 
-using namespace std;
+#include <iostream>
 
 //=======================================================================================
 /*! \fn int main( int argc, char **argv )
@@ -51,6 +53,14 @@ int main( int argc, char **argv )
 
     Subscribe subscriber( config );
     Publish publisher( config );
+
+    subscriber.received.link( &publisher, &Publish::send );
+
+    //-----------------------------------------------------------------------------------
+
+#ifdef GUI
+    Viewer viewer( nargs.app_name() );
+#endif
 
     //-----------------------------------------------------------------------------------
 

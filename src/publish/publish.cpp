@@ -18,14 +18,12 @@ Publish::Publish( const Config& conf )
 
 
 //=======================================================================================
-void Publish::send( const ZcmService& data )
+void Publish::send( const int64_t rec, const ZcmService& data )
 {
     ZcmService msg = std::move( data );
-    msg.u_timestamp = vtime_point::now().microseconds().count();
+    msg.u_timestamp = data.u_timestamp;
+    msg.processing_time = int32_t( vtime_point::now().microseconds().count() - rec );
 
-    auto now = vtime_point::now().microseconds().count();
-    msg.processing_time = int32_t( now - msg.u_timestamp );
-
-    _zcm.publish( _conf.send.ch(), &msg );
+    _zcm.publish( _conf.send.ch(), msg );
 }
 //=======================================================================================

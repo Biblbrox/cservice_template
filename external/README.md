@@ -8,4 +8,6 @@
 
 [zcm_types](http://bb.niias/projects/ADO/repos/zcm_types/browse) - messages for bus transfer using the ZCM framework.
 
+[vzcm](http://bb.niias/users/elapidae/repos/vzcm/browse) - a wrapper over zcm :: ZCM for receiving and sending messages to the bus.
+
 ---

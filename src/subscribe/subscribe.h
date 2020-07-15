@@ -41,7 +41,8 @@ public:
 
     //-----------------------------------------------------------------------------------
 
-    vsignal<ZcmService> received;
+    //! \brief received emit signal if ZCM message received
+    vsignal<int64_t, ZcmService> received;
 
     //-----------------------------------------------------------------------------------
 
@@ -53,8 +54,6 @@ private:
     //! \param _zcm ZCM node
     vzcm _zcm;
 
-    //! \param _zcm ZCM received messages
-    vsignal<ZcmService> _data;
 };
 //=======================================================================================
 

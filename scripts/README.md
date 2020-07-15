@@ -32,13 +32,13 @@ Scripts for app manipulating.
 
 - run.sh
 
-    Launch the application taking into account the arguments:<br/>
+    Launch the application taking into account the [arguments](http://bb.niias/projects/TOOL/repos/niias_srv_supply/browse):<br/>
 
 | Argument| Description                | Example                      |
 |---------|----------------------------|------------------------------|
 | -c      | Path to configuration file | ../cfg/cservice_template.cfg |
 | -p      | Path to application PID    | /tmp/cservice_template       |
-
+| others  | -                          | -                            |
 
 ---
 

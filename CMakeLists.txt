@@ -8,16 +8,21 @@ cmake_minimum_required( VERSION 3.10 )
 
 #========================================================================================
 
-add_definitions( -DGUI )
+option( GUI FALSE )
 add_definitions( -DTRACE )
 
 #========================================================================================
 
-#set( CMAKE_BUILD_TYPE "Release" )
-set( CMAKE_BUILD_TYPE "Debug" )
+if ( GUI )
+    add_definitions( -DGUI )
+    set( CMAKE_BUILD_TYPE "Debug" )
+else()
+    set( CMAKE_BUILD_TYPE "Release" )
+endif()
 
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
+set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-dev" )
 
 #========================================================================================
 
@@ -35,10 +40,10 @@ include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
 add_executable( ${PROJECT_NAME}
     ${CFG}
     ${SRC}
-    main.cpp
     ${EXTERNAL} )
 
 target_link_libraries( ${PROJECT_NAME}
+    ${PCL_LIBRARIES}
     ${V_LIBRARIES}
     -ldl )
 
