@@ -3,7 +3,7 @@
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
-*/
+ */
 
 //=======================================================================================
 
@@ -60,7 +60,7 @@ void Config::_build()
     _settings.subgroup( this->send.str ).set( "channel", send.channel );
 }
 //=======================================================================================
-bool Config::_stob( const std::string str )
+bool Config::_stob( const std::string& str )
 {
     if ( str == "true" ) return true;
     if ( str == "false" ) return false;

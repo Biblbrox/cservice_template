@@ -5,7 +5,7 @@
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
-*/
+ */
 
 //=======================================================================================
 
@@ -33,7 +33,7 @@ public:
      * \brief constructor.
      * \param[in] fname Path to configuration file.
      * \details Initialize _zcm node
-    */
+     */
     Subscribe( const Config& conf );
 
     //! \brief default destructor.
@@ -52,10 +52,10 @@ public:
 
 private:
 
-    //! \param _conf configuration parameters
+    //! \var _conf configuration parameters
     Config _conf;
 
-    //! \param _zcm ZCM node
+    //! \var _zcm ZCM node
     vzcm _zcm;
 
 };

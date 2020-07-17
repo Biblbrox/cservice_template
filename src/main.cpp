@@ -20,8 +20,8 @@
 #include "vapplication.h"
 #include "vthread.h"
 #include "vlog.h"
-#include "vzcm.h"
 
+#include "vzcm.h"
 
 #include <iostream>
 
@@ -38,7 +38,6 @@
  */
 int main( int argc, char **argv )
 {
-//    vapplication vapp;
     niias::arguments nargs( argc, argv );
 
     Config config( nargs.config_name() );
@@ -59,12 +58,17 @@ int main( int argc, char **argv )
     //-----------------------------------------------------------------------------------
 
 #ifdef GUI
-    View viewer( nargs.app_name() );
+    vthread thread;
+    thread.invoke( [&]
+    {
+        View viewer( nargs.app_name() );
+        viewer.run();
+    } );
 #endif
 
     //-----------------------------------------------------------------------------------
 
-//    vapp.poll();
+    vapplication::poll();
 
     return EXIT_SUCCESS;
 }

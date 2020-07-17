@@ -5,7 +5,7 @@
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
-*/
+ */
 
 //=======================================================================================
 
@@ -25,20 +25,21 @@
 //=======================================================================================
 /*! \class View
  * \brief Data PCL viewer.
- * \details ...
+ * \details Interconnects with the rest of the application classes to render results.
  */
 class View
 {
 public:
 
-    /*!
-     * \brief constructor.
-     * \param name Path to configuration file.
+    /*! \brief constructor.
+     * \param[in] name Path to configuration file.
      * \details Initialize _plot PCL visualizer basic options.
-    */
-    View( const std::string name );
+     */
+    View( const std::string& name = {} );
 
-    //! \brief default destructor.
+    /*! \brief default destructor.
+     * \details Close plot widget and stops the application.
+     */
     ~View();
 
     //-----------------------------------------------------------------------------------
@@ -48,9 +49,13 @@ public:
      */
     void run();
 
+    //-----------------------------------------------------------------------------------
+
 private:
 
-    vthread _thread;
+    /*! \var _plot
+     * \brief Data visualization widget reference.
+     */
     pcl::visualization::PCLVisualizer _plot;
 
 };

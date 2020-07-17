@@ -7,22 +7,23 @@
 
 #include "view.h"
 
+#include "vlog.h"
+
 using namespace pcl::visualization;
 
 //=======================================================================================
-View::View( const std::string name )
+View::View( const std::string& name )
 {
     _plot.setWindowName( name );
     _plot.setSize( 1600, 900 );
     _plot.addCoordinateSystem( 1.0, "cloud", 0 );
     _plot.setBackgroundColor( 0., 0., 0., 0 );
-
-    _thread.invoke( this, &View::run );
 }
 //=======================================================================================
 View::~View()
 {
-    _thread.join();
+    _plot.close();
+    vapplication::stop();
 }
 //=======================================================================================
 
@@ -30,7 +31,6 @@ View::~View()
 //=======================================================================================
 void View::run()
 {
-    while ( !_plot.wasStopped() )
-        _plot.spin();
+    _plot.spin();
 }
 //=======================================================================================

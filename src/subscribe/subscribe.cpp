@@ -3,7 +3,7 @@
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
-*/
+ */
 
 #include "subscribe.h"
 
