@@ -38,8 +38,7 @@
  */
 int main( int argc, char **argv )
 {
-    vapplication vapp;
-
+//    vapplication vapp;
     niias::arguments nargs( argc, argv );
 
     Config config( nargs.config_name() );
@@ -65,7 +64,7 @@ int main( int argc, char **argv )
 
     //-----------------------------------------------------------------------------------
 
-    vapp.poll();
+//    vapp.poll();
 
     return EXIT_SUCCESS;
 }

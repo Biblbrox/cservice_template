@@ -14,6 +14,7 @@
 
 #include "config.h"
 
+#include "vapplication.h"
 #include "vsignal.h"
 #include "vthread.h"
 
@@ -38,12 +39,18 @@ public:
     View( const std::string name );
 
     //! \brief default destructor.
-    ~View() = default;
+    ~View();
 
     //-----------------------------------------------------------------------------------
 
+    /*! \fn void run();
+     * \brief run Starts viewer loop.
+     */
+    void run();
+
 private:
 
+    vthread _thread;
     pcl::visualization::PCLVisualizer _plot;
 
 };

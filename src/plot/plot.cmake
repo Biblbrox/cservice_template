@@ -1,6 +1,6 @@
 #========================================================================================
 
-find_package( PCL 1.10 REQUIRED )
+find_package( PCL REQUIRED )
 
 if( PCL_FOUND )
 
@@ -11,6 +11,10 @@ if( PCL_FOUND )
     link_directories( ${PCL_LIBRARY_DIRS} )
 
 endif()
+
+find_package( VTK REQUIRED )
+
+include( ${VTK_USE_FILE} )
 
 #========================================================================================
 

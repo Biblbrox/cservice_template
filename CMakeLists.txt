@@ -43,6 +43,7 @@ add_executable( ${PROJECT_NAME}
     ${EXTERNAL} )
 
 target_link_libraries( ${PROJECT_NAME}
+    ${VTK_LIBRARIES}
     ${PCL_LIBRARIES}
     ${V_LIBRARIES}
     -ldl )
