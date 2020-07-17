@@ -1,5 +1,5 @@
-/*! \file publish.cpp
- * \brief Publish class implementation.
+/*! \file core.cpp
+ * \brief Core class implementation.
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
@@ -7,26 +7,21 @@
 
 //=======================================================================================
 
-#include "publish.h"
+#include "core.h"
 
 #include "vtime_point.h"
 #include "vlog.h"
 
 //=======================================================================================
-Publish::Publish( const Config& conf )
+Core::Core( const Config& conf )
     : _conf ( std::move( conf ) )
-    , _zcm  ( conf.send.target  )
 {}
 //=======================================================================================
 
 
 //=======================================================================================
-void Publish::send( const int64_t& rec, const ZcmService& data )
+void Core::run( const Pack& pack )
 {
-    ZcmService msg = std::move( data );
-    msg.u_timestamp = data.u_timestamp;
-    msg.processing_time = int32_t( vtime_point::now().microseconds().count() - rec );
-
-    _zcm.publish( _conf.send.ch, msg );
+    // Algotihms
 }
 //=======================================================================================

@@ -10,6 +10,7 @@
 #include "config.h"
 
 #include "vlog.h"
+#include "vcat.h"
 
 using namespace std;
 
@@ -33,6 +34,7 @@ Config::Config( const std::string& fname )
         receive.target  = group.get( "target"  );
         receive.prefix  = group.get( "prefix"  );
         receive.channel = group.get( "channel" );
+        receive.ch      = vcat( receive.prefix, receive.channel );
     }
 
     {
@@ -41,6 +43,7 @@ Config::Config( const std::string& fname )
         send.target  = group.get( "target"  );
         send.prefix  = group.get( "prefix"  );
         send.channel = group.get( "channel" );
+        send.ch      = vcat( send.prefix, send.channel );
     }
 }
 //=======================================================================================

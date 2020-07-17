@@ -16,7 +16,6 @@
 
 #include "vapplication.h"
 #include "vsignal.h"
-#include "vthread.h"
 
 #include <pcl/visualization/pcl_visualizer.h>
 
@@ -45,15 +44,22 @@ public:
     //-----------------------------------------------------------------------------------
 
     /*! \fn void run();
-     * \brief run Starts viewer loop.
+     * \brief Starts viewer loop.
      */
     void run();
 
     //-----------------------------------------------------------------------------------
 
+    /*! \fn void plot();
+     * \brief Draw some 2D/3D data.
+     */
+    void plot();
+
+    //-----------------------------------------------------------------------------------
+
 private:
 
-    /*! \var _plot
+    /*! \param _plot
      * \brief Data visualization widget reference.
      */
     pcl::visualization::PCLVisualizer _plot;

@@ -22,7 +22,6 @@
 //=======================================================================================
 /*! \class Publish
  * \brief ZCM message publisher class.
- * \details ...
  */
 class Publish
 {
@@ -40,21 +39,21 @@ public:
 
     //-----------------------------------------------------------------------------------
 
-    /*! \fn void send( const int64_t rec, const ZcmService& data );
+    /*! \fn void send( const int64_t& rec, const ZcmService& data );
      * \brief send processed data to ZCM.
      * \param[in] rec raw timestamp.
      * \param[in] data from ZCM bus.
      */
-    void send( const int64_t rec, const ZcmService& data );
+    void send( const int64_t& rec, const ZcmService& data );
 
     //-----------------------------------------------------------------------------------
 
 private:
 
-    //! \var _conf configuration parameters
+    //! \param _conf configuration parameters
     Config _conf;
 
-    //! \var _zcm ZCM node
+    //! \param _zcm ZCM node
     vzcm _zcm;
 
 };

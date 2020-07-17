@@ -1,46 +1,40 @@
-/*! \file view.cpp
- * \brief View class implementation.
+/*! \file pack.cpp
+ * \brief Pack class implementation.
  *
  * \authors Dmitrii Leliuhin
  * \date July 2020
-*/
+ */
 
 //=======================================================================================
 
-#include "view.h"
-
-#include "vlog.h"
-
-using namespace pcl::visualization;
+#include "pack.h"
 
 //=======================================================================================
-View::View( const std::string& name )
+void Data::operator =( const ZcmService& data )
 {
-    _plot.setWindowName( name );
-    _plot.setSize( 1600, 900 );
-    _plot.addCoordinateSystem( 1.0, "cloud", 0 );
-    _plot.setBackgroundColor( 0., 0., 0., 0 );
+    _timestamp = data.u_timestamp;
 }
 //=======================================================================================
-View::~View()
+void Data::clear()
 {
-    _plot.close();
-    vapplication::stop();
+    _timestamp = 0;
 }
 //=======================================================================================
 
 
 //=======================================================================================
-void View::run()
+const int64_t & Data::timestamp() const
 {
-    _plot.spin();
+    return _timestamp;
 }
 //=======================================================================================
 
 
-//=======================================================================================
-void View::plot()
-{
 
+
+//=======================================================================================
+void Pack::clear()
+{
+    data.clear();
 }
 //=======================================================================================

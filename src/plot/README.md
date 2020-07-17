@@ -1,12 +1,9 @@
-# Config
+# Plot
 
-Configuration file parsing class.
+Data PCL viewer.
 
 ---
 
-Formed in order to select the necessary groups of values from the configuration file.
-It is required to transfer the path to the file.
-
-See description of [configuration file](../cfg/CFG/md).
+See description of [PCL](https://pointclouds.org).
 
 ---

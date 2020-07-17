@@ -8,9 +8,12 @@
  *
  */
 
-#include "config.h"
+//=======================================================================================
+
 #include "subscribe.h"
 #include "publish.h"
+#include "config.h"
+#include "core.h"
 #ifdef GUI
 #include "view.h"
 #endif
@@ -52,8 +55,11 @@ int main( int argc, char **argv )
 
     Subscribe subscriber( config );
     Publish publisher( config );
+    Core core( config );
 
-    subscriber.received.link( &publisher, &Publish::send );
+    subscriber.received.link( &core, &Core::run );
+
+    // Custom link Core --> Publish
 
     //-----------------------------------------------------------------------------------
 

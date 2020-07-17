@@ -12,7 +12,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#include "vcat.h"
 #include "vsettings.h"
 
 //=======================================================================================
@@ -36,8 +35,8 @@ public:
     //-----------------------------------------------------------------------------------
 
     /*! \struct Main
-     * \var debug Flag if need trace service info to log file.
-     * \var str Struct name.
+     * \param debug Flag if need trace service info to log file.
+     * \param str Struct name.
      */
     struct Main
     {
@@ -50,10 +49,11 @@ public:
     //-----------------------------------------------------------------------------------
 
     /*! \struct Receive
-     * \var target Inter Process Communications.
-     * \var prefix ZCM in channel prefix.
-     * \var channel ZCM in channel name.
-     * \var str Struct name.
+     * \param target  Inter Process Communications.
+     * \param prefix  ZCM in channel prefix.
+     * \param channel ZCM in channel name.
+     * \param ch      Concatenated prefix and channel strings.
+     * \param str     Struct name.
      */
     struct Receive
     {
@@ -61,14 +61,7 @@ public:
         std::string prefix  {};
         std::string channel {};
 
-        /*! \fn std::string ch() const
-         * \return Concatenated prefix and channel strings.
-        */
-        std::string ch() const
-        {
-            return vcat( prefix, channel );
-        }
-
+        std::string ch {};
         std::string str { "receive" };
 
     } receive;
@@ -76,10 +69,11 @@ public:
     //-----------------------------------------------------------------------------------
 
     /*! \struct Send
-     * \var target Inter Process Communications.
-     * \var prefix ZCM out channel prefix.
-     * \var channel ZCM out channel name.
-     * \var str Struct name.
+     * \param target  Inter Process Communications.
+     * \param prefix  ZCM out channel prefix.
+     * \param channel ZCM out channel name.
+     * \param ch      Concatenated prefix and channel strings.
+     * \param str     Struct name.
      */
     struct Send
     {
@@ -87,14 +81,7 @@ public:
         std::string prefix  {};
         std::string channel {};
 
-        /*! \fn std::string ch() const
-         * \return Concatenated prefix and channell strings.
-         */
-        std::string ch() const
-        {
-            return vcat( prefix, channel );
-        }
-
+        std::string ch {};
         std::string str { "send" };
 
     } send;
@@ -103,7 +90,7 @@ public:
 
 private:
 
-    //! \var _settings Container of configuration file groups and subgroups.
+    //! \param _settings Container of configuration file groups and subgroups.
     vsettings _settings;
 
     //-----------------------------------------------------------------------------------
