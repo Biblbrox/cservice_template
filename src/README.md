@@ -1,18 +1,47 @@
 # Source structure
 
-src
-|   README.md
-|   src.cmake
-|   main.cpp
+```
+src/
 |
-|___config
-|   |   README.md
-|   |   config.cmake
-|   |   config.h
-|   |   config.cpp
+├── README.md
+├── src.cmake
+├── main.cpp
 |
-|___defs
-    |   README.md
-    |   defs.cmake
-    |   defs.h
+├── config
+│   ├── config.cmake
+│   ├── config.cpp
+│   ├── config.h
+│   └── README.md
+|
+├── defs
+│   ├── defs.cmake
+│   ├── defs.h
+│   └── README.md
+|
+├── plot
+│   ├── plot.cmake
+│   ├── README.md
+│   ├── viewer.cpp
+│   └── viewer.h
+|
+├── publish
+│   ├── publish.cmake
+│   ├── publish.cpp
+│   ├── publish.h
+│   └── README.md
+|
+└── subscribe
+    ├── README.md
+    ├── subscribe.cmake
+    ├── subscribe.cpp
+    └── subscribe.h
+```
+
+---
+
+To quickly display the project tree, it is recommended to use the command:
+
+```tree src```
+
+---
 

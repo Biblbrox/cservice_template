@@ -1,5 +1,5 @@
-/*! \file viewer.h
- * \brief Viewer class interface.
+/*! \file view.h
+ * \brief View class interface.
  *
  * Data PCL viewer.
  *
@@ -9,43 +9,44 @@
 
 //=======================================================================================
 
-#ifndef PLOT_H
-#define PLOT_H
+#ifndef VIEW_H
+#define VIEW_H
 
 #include "config.h"
 
 #include "vsignal.h"
+#include "vthread.h"
 
 #include <pcl/visualization/pcl_visualizer.h>
 
 #include <string>
 
 //=======================================================================================
-/*! \class Viewer
+/*! \class View
  * \brief Data PCL viewer.
  * \details ...
  */
-class Viewer
+class View
 {
 public:
 
     /*!
      * \brief constructor.
      * \param name Path to configuration file.
-     * \details Initialize _zcm node
+     * \details Initialize _plot PCL visualizer basic options.
     */
-    Viewer( const std::string name );
+    View( const std::string name );
 
     //! \brief default destructor.
-    ~Viewer() = default;
+    ~View() = default;
 
     //-----------------------------------------------------------------------------------
 
 private:
 
-    pcl::visualization::PCLVisualizer _viewer;
+    pcl::visualization::PCLVisualizer _plot;
 
 };
 //=======================================================================================
 
-#endif // PLOT_H
+#endif // VIEW_H

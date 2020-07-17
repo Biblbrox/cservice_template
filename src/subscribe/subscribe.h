@@ -31,7 +31,7 @@ public:
 
     /*!
      * \brief constructor.
-     * \param fname Path to configuration file.
+     * \param[in] fname Path to configuration file.
      * \details Initialize _zcm node
     */
     Subscribe( const Config& conf );
@@ -41,7 +41,11 @@ public:
 
     //-----------------------------------------------------------------------------------
 
-    //! \brief received emit signal if ZCM message received
+    /*!
+     * \brief received emit signal if ZCM message received
+     * \arg int64_t raw timestamp.
+     * \arg ZcmService data from ZCM bus.
+     */
     vsignal<int64_t, ZcmService> received;
 
     //-----------------------------------------------------------------------------------

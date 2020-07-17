@@ -30,8 +30,8 @@ public:
 
     /*!
      * \brief constructor.
-     * \param fname Path to configuration file.
-     * \details Initialize _zcm node
+     * \param[in] fname Path to configuration file.
+     * \details Initialize _zcm node.
     */
     Publish( const Config& conf );
 
@@ -40,6 +40,11 @@ public:
 
     //-----------------------------------------------------------------------------------
 
+    /*! \fn void send( const int64_t rec, const ZcmService& data );
+     * \brief send processed data to ZCM.
+     * \param[in] rec raw timestamp.
+     * \param[in] data from ZCM bus.
+     */
     void send( const int64_t rec, const ZcmService& data );
 
     //-----------------------------------------------------------------------------------

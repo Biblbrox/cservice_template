@@ -19,8 +19,8 @@ include_directories( ${CMAKE_CURRENT_LIST_DIR} )
 #========================================================================================
 
 set( PLOT
-    ${CMAKE_CURRENT_LIST_DIR}/viewer.h
-    ${CMAKE_CURRENT_LIST_DIR}/viewer.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/view.h
+    ${CMAKE_CURRENT_LIST_DIR}/view.cpp
    )
 
 #========================================================================================

@@ -13,6 +13,7 @@ include( ${VLIBS_DIR}/cmake/vsettings.cmake )
 include( ${VLIBS_DIR}/cmake/pthread.cmake )
 include( ${VLIBS_DIR}/cmake/vsignal.cmake )
 include( ${VLIBS_DIR}/cmake/vchrono.cmake )
+include( ${VLIBS_DIR}/cmake/vposix.cmake )
 include( ${VLIBS_DIR}/cmake/vgit.cmake )
 include( ${VLIBS_DIR}/cmake/vlog.cmake )
 

@@ -11,16 +11,17 @@
 #include "config.h"
 #include "subscribe.h"
 #include "publish.h"
+#ifdef GUI
+#include "view.h"
+#endif
 
 #include "niias_arguments.h"
 
 #include "vapplication.h"
+#include "vthread.h"
 #include "vlog.h"
 #include "vzcm.h"
 
-#ifdef GUI
-#include "viewer.h"
-#endif
 
 #include <iostream>
 
@@ -59,7 +60,7 @@ int main( int argc, char **argv )
     //-----------------------------------------------------------------------------------
 
 #ifdef GUI
-    Viewer viewer( nargs.app_name() );
+    View viewer( nargs.app_name() );
 #endif
 
     //-----------------------------------------------------------------------------------
