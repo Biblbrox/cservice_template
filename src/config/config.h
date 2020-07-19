@@ -13,6 +13,7 @@
 #define CONFIG_H
 
 #include "vsettings.h"
+#include "vlog.h"
 
 //=======================================================================================
 /*! \class Config
@@ -24,10 +25,9 @@ public:
 
     /*!
      * \brief Config constructor.
-     * \param fname Path to configuration file.
      * \details Build default settings if cannot parse them from config.
      */
-    Config( const std::string& fname = {} );
+    Config();
 
     //! \brief Default Config deconstructor.
     ~Config() = default;
@@ -88,22 +88,66 @@ public:
 
     //-----------------------------------------------------------------------------------
 
-private:
+    /*! \struct Logs
+     * \param need_trace   Flag if need log service messages to file.
+     * \param need_shared  Flag if need write all logging levels to one file.
+     * \param shared_name  Shared log filename.
+     * \param need_leveled Flag if need write each level of logging to its own file.
+     * \param leveled_path Leveled logs path.
+     * \param file_sizes   Log max size in Kb.
+     * \param rotates      Max logs count.
+     * \param str          Struct name.
+     */
+    struct Logs
+    {
+        bool need_trace = true;
 
-    //! \param _settings Container of configuration file groups and subgroups.
-    vsettings _settings;
+        bool need_shared = true;
+        std::string shared_name = "$$FULL_APP.log";
+
+        bool need_leveled = true;
+        std::string leveled_path = "$$APP_PATH/logs";
+
+        uint file_sizes = 1e6;
+        uint rotates {3};
+
+        /*! \fn void setup();
+         * \brief Starts log data.
+         * \details Check Logs flags and run logging if need.
+         */
+        void setup();
+
+        std::string str { "logs" };
+
+    } logs;
 
     //-----------------------------------------------------------------------------------
 
-    /*! \fn void _build()
-     * \brief Set the default parameters to _settings.
+    /*! \fn void capture( const vsettings& data );
+     * \brief Fill internal schema.
+     * \param[in] data Third-party settings.
      */
-    void _build();
+    void capture( const vsettings& data );
 
-    /*! \fn bool _stob( std::string str )
-     * \brief Convert string value to bool.
+    /*! \fn static vsettings by_default();
+     * \brief Generates config with default settings.
+     * \return Default settings.
      */
-    bool _stob( const std::string& str );
+    static vsettings by_default();
+
+    //-----------------------------------------------------------------------------------
+
+private:
+
+    //! \brief Container of configuration file groups and subgroups.
+    vsettings::schema _schema;
+
+    //-----------------------------------------------------------------------------------
+
+    /*! \fn void _fill_ch();
+     * \brief Fill receive/send channels fullnames.
+     */
+    void _fill_ch();
 
 };
 //=======================================================================================

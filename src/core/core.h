@@ -45,9 +45,18 @@ public:
 
     //-----------------------------------------------------------------------------------
 
+    /*!
+     * \brief emit signal if pack processed.
+     * \param int64_t Raw data timestamp.
+     * \param ZcmService Service message.
+     */
+    vsignal<int64_t, ZcmService> processed;
+
+    //-----------------------------------------------------------------------------------
+
 private:
 
-    //! \param _conf configuration parameters
+    //! \brief Configuration parameters.
     Config _conf;
 
 };

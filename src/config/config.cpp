@@ -9,65 +9,95 @@
 
 #include "config.h"
 
-#include "vlog.h"
 #include "vcat.h"
 
-using namespace std;
-
 //=======================================================================================
-Config::Config( const std::string& fname )
+Config::Config()
 {
-    _build();
-
-    if ( !fname.empty() )
-        _settings.from_ini_file( fname );
-
     {
-        auto group = _settings.subgroup( main.str );
+        _schema.subgroup( main.str );
 
-        main.debug = _stob( group.get( "debug" ) );
+        _schema.add( "debug", &main.debug );
+
+        _schema.end_subgroup();
     }
 
     {
-        auto group = _settings.subgroup( receive.str );
+        _schema.subgroup( receive.str );
 
-        receive.target  = group.get( "target"  );
-        receive.prefix  = group.get( "prefix"  );
-        receive.channel = group.get( "channel" );
-        receive.ch      = vcat( receive.prefix, receive.channel );
+        _schema.add( "target",  &receive.target );
+        _schema.add( "prefix",  &receive.prefix );
+        _schema.add( "channel", &receive.channel );
+
+        _schema.end_subgroup();
     }
 
     {
-        auto group = _settings.subgroup( send.str );
+        _schema.subgroup( send.str );
 
-        send.target  = group.get( "target"  );
-        send.prefix  = group.get( "prefix"  );
-        send.channel = group.get( "channel" );
-        send.ch      = vcat( send.prefix, send.channel );
+        _schema.add( "target",  &send.target );
+        _schema.add( "prefix",  &send.prefix );
+        _schema.add( "channel", &send.channel );
+
+        _schema.end_subgroup();
     }
+
+    {
+        _schema.subgroup( logs.str );
+
+        _schema.add( "need_trace",   &logs.need_trace );
+        _schema.add( "need_shared",  &logs.need_shared );
+        _schema.add( "shared_name",  &logs.shared_name );
+        _schema.add( "need_leveled", &logs.need_leveled );
+        _schema.add( "leveled_path", &logs.leveled_path );
+        _schema.add( "file_sizes",   &logs.file_sizes );
+        _schema.add( "rotates",      &logs.rotates );
+
+        _schema.end_subgroup();
+    }
+
+    _fill_ch();
 }
 //=======================================================================================
 
 
 //=======================================================================================
-void Config::_build()
+void Config::capture( const vsettings& data )
 {
-    _settings.subgroup( this->main.str ).set( "debug", main.debug );
+    _schema.capture( data );
 
-    _settings.subgroup( this->receive.str ).set( "target",  receive.target );
-    _settings.subgroup( this->receive.str ).set( "prefix",  receive.prefix );
-    _settings.subgroup( this->receive.str ).set( "channel", receive.channel );
-
-    _settings.subgroup( this->send.str ).set( "target",  send.target );
-    _settings.subgroup( this->send.str ).set( "prefix",  send.prefix );
-    _settings.subgroup( this->send.str ).set( "channel", send.channel );
+    _fill_ch();
 }
 //=======================================================================================
-bool Config::_stob( const std::string& str )
+vsettings Config::by_default()
 {
-    if ( str == "true" ) return true;
-    if ( str == "false" ) return false;
+    return Config()._schema.build();
+}
+//=======================================================================================
 
-    return false;
+
+//=======================================================================================
+void Config::_fill_ch()
+{
+    receive.ch = vcat( receive.prefix, receive.channel );
+    send.ch    = vcat( send.prefix, send.channel );
+}
+//=======================================================================================
+
+
+//=======================================================================================
+void Config::Logs::setup()
+{
+    if ( !need_trace )
+    {
+        vlog::clear_executers();
+        return;
+    }
+
+    if ( need_shared )
+        vlog::set_shared_log( shared_name, file_sizes, rotates );
+
+    if ( need_leveled )
+        vlog::set_leveled_log( leveled_path, file_sizes, rotates );
 }
 //=======================================================================================

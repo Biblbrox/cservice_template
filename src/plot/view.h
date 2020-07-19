@@ -59,9 +59,7 @@ public:
 
 private:
 
-    /*! \param _plot
-     * \brief Data visualization widget reference.
-     */
+    //! \brief Data visualization widget reference.
     pcl::visualization::PCLVisualizer _plot;
 
 };

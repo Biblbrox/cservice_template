@@ -24,7 +24,7 @@ public:
 
     /*! \fn void operator =( const ZcmService& data );
      * \brief Convert ZcmService data to custom format.
-     * \param data Message data.
+     * \param[in] data Message data.
      */
     void operator =( const ZcmService& data );
 
@@ -39,7 +39,7 @@ public:
 
     /*! \fn const int64_t & timestamp() const;
      * \brief timestamp getter.
-     * \return int64_t & _timestamp
+     * \return Saved timestamp.
      */
     const int64_t & timestamp() const;
 
@@ -47,7 +47,7 @@ public:
 
 private:
 
-    //! \param _timestamp raw data.
+    //! \brief Raw data timestamp.
     int64_t _timestamp {0};
 
 };

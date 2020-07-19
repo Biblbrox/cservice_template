@@ -41,15 +41,14 @@
  */
 int main( int argc, char **argv )
 {
-    niias::arguments nargs( argc, argv );
-
-    Config config( nargs.config_name() );
-
-    //-----------------------------------------------------------------------------------
-
-    if ( config.main.debug )
-        vlog::clear_executers();
-    vlog::set_shared_log ( nargs.full_app() + ".log",  1e6, 5 );
+    niias::arguments nargs( argc, argv,
+                            "cservice_template - JSC NIIAS",
+                            Config::by_default() );
+    Config config;
+    {
+        config.capture( nargs.settings() );
+        config.logs.setup();
+    }
 
     //-----------------------------------------------------------------------------------
 
@@ -59,7 +58,7 @@ int main( int argc, char **argv )
 
     subscriber.received.link( &core, &Core::run );
 
-    // Custom link Core --> Publish
+    core.processed.link( &publisher, &Publish::send );
 
     //-----------------------------------------------------------------------------------
 

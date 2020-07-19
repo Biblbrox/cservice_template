@@ -22,6 +22,8 @@ Core::Core( const Config& conf )
 //=======================================================================================
 void Core::run( const Pack& pack )
 {
-    // Algotihms
+    // Algorithms
+
+    processed( pack.data.timestamp(), {/* Send your data. */} );
 }
 //=======================================================================================

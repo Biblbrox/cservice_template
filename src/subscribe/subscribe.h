@@ -39,9 +39,8 @@ public:
     //-----------------------------------------------------------------------------------
 
     /*!
-     * \brief received emit signal if ZCM message received
-     * \arg int64_t raw timestamp.
-     * \arg ZcmService data from ZCM bus.
+     * \brief emit signal if ZCM message received.
+     * \param Pack Data from ZCM bus.
      */
     vsignal<Pack> received;
 
@@ -49,13 +48,13 @@ public:
 
 private:
 
-    //! \param _conf configuration parameters
+    //! \brief Configuration parameters.
     Config _conf;
 
-    //! \param _zcm ZCM node
+    //! \brief ZCM node.
     vzcm _zcm;
 
-    //! \param _pack Data aggregated from multiple sensors.
+    //! \brief Data aggregated from multiple sensors.
     Pack _pack;
 
 };

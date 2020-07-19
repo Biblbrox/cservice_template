@@ -50,10 +50,10 @@ public:
 
 private:
 
-    //! \param _conf configuration parameters
+    //! \brief Configuration parameters.
     Config _conf;
 
-    //! \param _zcm ZCM node
+    //! \brief ZCM node.
     vzcm _zcm;
 
 };
