@@ -2,34 +2,38 @@
 
 ```
 src/
-|
-├── README.md
-├── src.cmake
-├── main.cpp
-|
 ├── config
 │   ├── config.cmake
 │   ├── config.cpp
 │   ├── config.h
 │   └── README.md
-|
+├── core
+│   ├── core.cmake
+│   ├── core.cpp
+│   ├── core.h
+│   └── README.md
 ├── defs
 │   ├── defs.cmake
 │   ├── defs.h
 │   └── README.md
-|
+├── main.cpp
+├── pack
+│   ├── pack.cmake
+│   ├── pack.cpp
+│   ├── pack.h
+│   └── README.md
 ├── plot
 │   ├── plot.cmake
 │   ├── README.md
-│   ├── viewer.cpp
-│   └── viewer.h
-|
+│   ├── view.cpp
+│   └── view.h
 ├── publish
 │   ├── publish.cmake
 │   ├── publish.cpp
 │   ├── publish.h
 │   └── README.md
-|
+├── README.md
+├── src.cmake
 └── subscribe
     ├── README.md
     ├── subscribe.cmake
