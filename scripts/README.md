@@ -76,4 +76,10 @@ Scripts for app manipulating.
 
     Renames all lines with cservice_template in the whole project to the new project naming according to the script input argument.
 
+*Example:* <br>
+
+```./scripts/rename.sh cservice_template cservice_template cservice_template preview``` - preview change files and lines.
+
+```./scripts/rename.sh cservice_template cservice_template cservice_template``` - recursively replace first argument to second in all files.
+
 ---
