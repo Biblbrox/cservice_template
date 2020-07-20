@@ -17,11 +17,11 @@ Service for ...
 
 ## Installation
 
-The installation procedures in Linux Ubuntu 16.04/14.04 32-bit LTS or Linux Mint 19.* 64-bit are shown here as examples.
+The installation procedures in Linux Ubuntu 16.04/14.04 32-bit LTS or Linux Mint 19.* /20. * 64-bit are shown here as examples.
 
 Describing how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
-```sudo apt-get install gcc-5 g++-5 libusb-1.0  ```
+```sudo apt-get install build-essential gcc-8 g++-8 cmake```
 
 ---
 

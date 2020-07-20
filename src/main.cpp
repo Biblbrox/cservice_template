@@ -66,6 +66,7 @@ int main( int argc, char **argv )
     thread.invoke( [&]
     {
         View viewer( nargs.app_name() );
+        core.plot_data.link( &viewer, &View::plot );
         viewer.run();
     } );
 #endif

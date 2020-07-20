@@ -25,5 +25,9 @@ void Core::run( const Pack& pack )
     // Algorithms
 
     processed( pack.data.timestamp(), {/* Send your data. */} );
+
+#ifdef GUI
+    plot_data( /*Transmit needed data.*/ );
+#endif
 }
 //=======================================================================================

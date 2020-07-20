@@ -52,6 +52,13 @@ public:
      */
     vsignal<int64_t, ZcmService> processed;
 
+#ifdef GUI
+    /*! \brief Send data to visualizer.
+     * \param Your parameter description.
+     */
+    vsignal</*Your parameter.*/> plot_data;
+#endif
+
     //-----------------------------------------------------------------------------------
 
 private:
