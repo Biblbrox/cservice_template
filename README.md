@@ -21,7 +21,11 @@ The installation procedures in Linux Ubuntu 16.04/14.04 32-bit LTS or Linux Mint
 
 Describing how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
 
-```sudo apt-get install build-essential gcc-8 g++-8 cmake```
+For embedded :<br/>
+```./scripts.install.sh```
+
+```./scripts.install-third-party.sh```
+
 
 ---
 
@@ -36,7 +40,7 @@ DEFINES += TRACE
 
 ---
 
-## [Tests](./test/TEST.md)
+## [Tests](./tests/README.md)
 
 Google Tests used for Unit-testing.<br />
 
@@ -107,13 +111,16 @@ Optional:<br />
 
 ## Contributing
 
-1. Fork it (<ssh://git@bb.niias:7999/~d.leliuhin/cservice_template.git>)
-2. Create your fix or feature branch (`git checkout -b feature/name`)
-3. Make changes
-4. Correct Readmes for whole directories.
-3. Commit your changes (`git add . & git commit -m "Feature. Add some fooBar."`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request to `develop`
+1. Fork it (<ssh://git@bb.niias:7999/tool/cservice_template.git>).
+2. Read [Code of Conduct](./doc/CODE_OF_CONDUCT.md).
+3. Create your fix or feature branch (`git checkout -b feature/name`).
+4. Make changes.
+5. Make unit tests.
+6. Build repo and tests.
+7. Correct Readmes for whole directories.
+8. Commit your changes (`git add . & git commit -m "Feature. Add some fooBar."`).
+9. Push to the branch (`git push origin feature/fooBar`)
+10. Create a new Pull Request to `develop`
 
 ---
 
