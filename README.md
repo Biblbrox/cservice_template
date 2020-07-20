@@ -1,17 +1,42 @@
 # cservice_template
+
+[[Build status](http://bamboo.niias/browse/TOOL-CSERVICEBUILD/latest)]
+[[Tests status](http://bamboo.niias/browse/TOOL-CSERVICEBUILD/test)]
+[[License](./doc/LICENSE.md)]
+
+
 Service for ...
 
 **cservice_template** is the software designed for ... It is developed based on C++17 and provides easy-to-use API. With **cservice_template**, users can quickly connect to ..., receive ... data and transmit decision via ....
 
 ---
 
-## Task
+## Overview
 
+A service is a template for proper use by developers within a company. The number of services is constantly growing, however, their base remains unchanged. In the current repository, the author has tried to simplify many routine tasks when creating a new repository, including: automatic code documentation, static analysis, code coverage with Unit-tests, the use of generally accepted company submodules to interact with other services in the system.
 
 ---
 
 ## Dependencies
 
+Basic:<br>
+
+- [build-essential](https://packages.debian.org/ru/sid/build-essential)
+- [C++17 (GCC-8, G++-8)](https://en.cppreference.com/w/cpp/17)
+- [CMake (> 3.10)](https://cmake.org)
+- [Make (> 4.2)](https://en.wikipedia.org/wiki/Make_(software))
+- [LCov (> 1.14)](http://ltp.sourceforge.net/coverage/lcov.php)
+- [CLang-Tidy (> 10.0)](https://clang.llvm.org/extra/clang-tidy/)
+- [CLang-Format (> 10.0)](https://clang.llvm.org/docs/ClangFormat.html)
+- [Ninja (> 1.10)](https://ninja-build.org)
+
+Third-party (for visualization):<br>
+
+- [Doxygen (> 1.8)](https://www.doxygen.nl/index.html)
+- [Graphviz](https://graphviz.org)
+- [Latex](https://www.latex-project.org/get/)
+- [Tree](https://pingvinus.ru/note/tree)
+- [PCL (> 1.10)](https://pointclouds.org)
 
 ---
 
@@ -26,101 +51,59 @@ For embedded :<br/>
 
 ```./scripts.install-third-party.sh```
 
-
 ---
 
-For trace service messages change:<br/>
+## Run
+
+Make changes according to task in [configuration file](./cfg).
+
+Without visualization:
+
 ```
-DEFINES -= TRACE
+cd cservice_template
+git checkout release
 ```
-to
+Without visualization: ```./scripts/build.sh``` <br>
+With visualization: ```./scripts/build-gui.sh```
+
 ```
-DEFINES += TRACE
+./scripts/run.sh
 ```
+
+Or using [Qt Creator IDE](https://www.qt.io/download):
+
+
+Without visualization: **Projects->Run->.*-c ../cservice_template/cfg/cservice_template.cfg -p /tmp/niias/cservice_template<br>
+
+With visualization: <br>
+- *Projects->Build->CMake->GUI->ON->Apply Configuration Changes* <br>
+- *Projects->Run->* ```-c ../cservice_template/cfg/cservice_template.cfg -p /tmp/niias/cservice_template``` <br>
+
+You can find more scripts in [scripts/](./scripts).
 
 ---
 
 ## [Tests](./tests/README.md)
 
-Google Tests used for Unit-testing.<br />
-
-For installation it is necessary to run:<br />
-
-```
-sudo apt install libgtest-dev
-cd /usr/src/gtest/
-sudo cmake -DBUILD_SHARED_LIBS=ON
-sudo make
-sudo cp *.so /usr/lib
-```
-
 ---
 
-### Submodules:
-
-[LeddarTech SDK](https://github.com/dleliuhin/LeddarSDK) requires [CMake 3.0.0+](https://cmake.org/) as dependencies. You need to install cmake using apt:
-```
-sudo apt install cmake
-```
-
-### Compile Livox SDK
-
-No need to compile library.
-
-```
-git clone ssh://git@bb.niias:7999/~d.leliuhin/door_detector.git
-cd door_detector
-git checkout develop
-./scripts/update_submodules.sh
-```
----
-
-## Run
-
-
-```
-cd door_detector
-git checkout master
-./scripts/build.sh
-./scripts/run.sh
-```
-
-Or using Qt Creator:
-
-**Projects->Run->.*-c ../LivoxDriver/cfg/livox_driver.cfg -p /tmp/niias/door_detector
-
----
-
-Optional:<br />
-
-```--help``` - print arg help.<br />
-```-p pid-name``` - pid name.<br />
-```-c config-path``` - configuration file path.<br />
-```--print-conf``` - print config & exit.<br />
-```--save-conf``` - save config alongside the binary & exit.<br />
-
----
-
-### Configuration file setup
-
-    ---
-
-## [Release History](dox/HISTORY.md)
+## [Release History](./doc/HISTORY.md)
 
 ---
 
 ## Contributing
 
 1. Fork it (<ssh://git@bb.niias:7999/tool/cservice_template.git>).
-2. Read [Code of Conduct](./doc/CODE_OF_CONDUCT.md).
+2. Read [Readme](./README.md), [License](./doc/LICENSE.md), [Code of Conduct](./doc/CODE_OF_CONDUCT.md) and [Condributing Guidelines](./doc/CONTRIBUTING.md).
 3. Create your fix or feature branch (`git checkout -b feature/name`).
-4. Make changes.
+4. Make changes according to [Condributing Guidelines](./doc/CONTRIBUTING.md).
 5. Make unit tests.
 6. Build repo and tests.
 7. Correct Readmes for whole directories.
-8. Commit your changes (`git add . & git commit -m "Feature. Add some fooBar."`).
-9. Push to the branch (`git push origin feature/fooBar`)
-10. Create a new Pull Request to `develop`
+8. Ensure that it is likely to be merged.
+9. Commit your changes (```git add . & git commit -m "Feature. Add wrapper class WrapperClass."```).
+10. Push to the branch (```git push origin feature/new-wrapper-class```)
+11. Create a new Pull Request to `develop`
 
 ---
 
@@ -133,6 +116,12 @@ Reach out to me at one of the following places!
 
 ---
 
+## [License](./doc/LICENSE.md)
+
+---
+
 ## [FAQ](doc/FAQ.md)
 
 ---
+
+**JSC NIIAS**
