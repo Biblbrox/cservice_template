@@ -40,6 +40,8 @@
  */
 int main( int argc, char **argv )
 {
+    // Parse config && create PID
+
     niias::arguments nargs( argc, argv,
                             "cservice_template - JSC NIIAS",
                             Config::by_default() );
@@ -51,6 +53,8 @@ int main( int argc, char **argv )
 
     //-----------------------------------------------------------------------------------
 
+    // Link signals -> slots
+
     Subscribe subscriber( config );
     Publish publisher( config );
     Core core( config );
@@ -60,6 +64,8 @@ int main( int argc, char **argv )
     core.processed.link( &publisher, &Publish::send );
 
     //-----------------------------------------------------------------------------------
+
+    // GUI in separate thread
 
 #ifdef GUI
     vthread thread;

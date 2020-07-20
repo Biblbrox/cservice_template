@@ -11,13 +11,30 @@ Service for ...
 
 ---
 
-## Overview
+## Table of contents
+
+1.  [ Overview ](#overview)
+2.  [ Dependencies ](#dependencies)
+3.  [ Installation ](#installation)
+4.  [ Run ](#run)
+5.  [ Tests ](#tests)
+6.  [ Release History ](#release)
+7.  [ Contributing ](#contributing)
+8.  [ Support ](#support)
+9.  [ License ](#license)
+10. [ FAQ ](#faq)
+
+---
+
+<a name="overview"></a>
+## 1. Overview
 
 A service is a template for proper use by developers within a company. The number of services is constantly growing, however, their base remains unchanged. In the current repository, the author has tried to simplify many routine tasks when creating a new repository, including: automatic code documentation, static analysis, code coverage with Unit-tests, the use of generally accepted company submodules to interact with other services in the system.
 
 ---
 
-## Dependencies
+<a name="dependencies"></a>
+## 2. Dependencies
 
 Basic:<br>
 
@@ -40,31 +57,24 @@ Third-party (for visualization):<br>
 
 ---
 
-## Installation
+<a name="installation"></a>
+## 3. [Installation](./doc/INSTALL.md)
 
-The installation procedures in Linux Ubuntu 16.04/14.04 32-bit LTS or Linux Mint 19.* /20. * 64-bit are shown here as examples.
-
-Describing how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-For embedded :<br/>
-```./scripts.install.sh```
-
-```./scripts.install-third-party.sh```
+The installation procedures in Linux Ubuntu 16.04/14.04 32-bit LTS or Linux Mint 19.* /20. * 64-bit are shown [here](./doc/INSTALL.md) as examples.
 
 ---
 
-## Run
+<a name="run"></a>
+## 4. Run
 
 Make changes according to task in [configuration file](./cfg).
-
-Without visualization:
 
 ```
 cd cservice_template
 git checkout release
 ```
-Without visualization: ```./scripts/build.sh``` <br>
-With visualization: ```./scripts/build-gui.sh```
+Without [visualization](./doc/README.md): ```./scripts/build.sh``` <br>
+With [visualization](./doc/README.md): ```./scripts/build-gui.sh```
 
 ```
 ./scripts/run.sh
@@ -73,9 +83,9 @@ With visualization: ```./scripts/build-gui.sh```
 Or using [Qt Creator IDE](https://www.qt.io/download):
 
 
-Without visualization: **Projects->Run->.*-c ../cservice_template/cfg/cservice_template.cfg -p /tmp/niias/cservice_template<br>
+Without [visualization](./doc/README.md): **Projects->Run->.*-c ../cservice_template/cfg/cservice_template.cfg -p /tmp/niias/cservice_template<br>
 
-With visualization: <br>
+With [visualization](./doc/README.md): <br>
 - *Projects->Build->CMake->GUI->ON->Apply Configuration Changes* <br>
 - *Projects->Run->* ```-c ../cservice_template/cfg/cservice_template.cfg -p /tmp/niias/cservice_template``` <br>
 
@@ -83,15 +93,18 @@ You can find more scripts in [scripts/](./scripts).
 
 ---
 
-## [Tests](./tests/README.md)
+<a name="tests"></a>
+## 5. [Tests](./tests/README.md)
 
 ---
 
-## [Release History](./doc/HISTORY.md)
+<a name="release"></a>
+## 6. [Release History](./doc/HISTORY.md)
 
 ---
 
-## Contributing
+<a name="contributing"></a>
+## 7. Contributing
 
 1. Fork it (<ssh://git@bb.niias:7999/tool/cservice_template.git>).
 2. Read [Readme](./README.md), [License](./doc/LICENSE.md), [Code of Conduct](./doc/CODE_OF_CONDUCT.md) and [Condributing Guidelines](./doc/CONTRIBUTING.md).
@@ -107,7 +120,8 @@ You can find more scripts in [scripts/](./scripts).
 
 ---
 
-## Support
+<a name="support"></a>
+## 8. Support
 
 Reach out to me at one of the following places!
 
@@ -116,11 +130,13 @@ Reach out to me at one of the following places!
 
 ---
 
-## [License](./doc/LICENSE.md)
+<a name="license"></a>
+## 9. [License](./doc/LICENSE.md)
 
 ---
 
-## [FAQ](doc/FAQ.md)
+<a name="faq"></a>
+## 10. [FAQ](doc/FAQ.md)
 
 ---
 

@@ -1,7 +1,9 @@
-# Documentation
+# Visualization
+
+Extended service documentation.
 
 ---
 
-Step-by-step documentation install and settings.
+![Visualization](./img/visualizer.png)
 
 ---
