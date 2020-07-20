@@ -22,7 +22,6 @@
 
 #include "vapplication.h"
 #include "vthread.h"
-#include "vlog.h"
 
 #include "vzcm.h"
 
