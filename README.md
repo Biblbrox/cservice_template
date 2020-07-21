@@ -43,6 +43,7 @@ Basic:<br>
 - [CMake (> 3.10)](https://cmake.org)
 - [Make (> 4.2)](https://en.wikipedia.org/wiki/Make_(software))
 - [LCov (> 1.14)](http://ltp.sourceforge.net/coverage/lcov.php)
+- [GCov (>9.3)](https://linux.die.net/man/1/gcov)
 - [CLang-Tidy (> 10.0)](https://clang.llvm.org/extra/clang-tidy/)
 - [CLang-Format (> 10.0)](https://clang.llvm.org/docs/ClangFormat.html)
 - [Ninja (> 1.10)](https://ninja-build.org)

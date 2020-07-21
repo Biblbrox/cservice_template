@@ -1,6 +1,6 @@
 #========================================================================================
 
-project( tests )
+project( test_cservice_template )
 
 #========================================================================================
 
@@ -14,13 +14,31 @@ set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage" )
 
 #========================================================================================
 
-set ( GTEST_INCLUDED TRUE )
+include( ${CMAKE_CURRENT_SOURCE_DIR}/../external/external.cmake )
+
+#========================================================================================
+
 find_library( GTEST_LIBRARY NAMES libgtest.a PATHS ${EXT_LIBS_PATH} )
-set( ${PROJECT_NAME} -lgtest )
+set( ${PROJECT_NAME} -lgtest -lgcov -fprofile-arcs )
 
-message( "${CMAKE_CURRENT_SOURCE_DIR}/../.." )
+#========================================================================================
 
-add_directory( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
+include_directories( ${CMAKE_SOURCE_DIR} )
+
+include( ${CMAKE_CURRENT_SOURCE_DIR}/src_test/src_test.cmake )
+
+#========================================================================================
+
+add_executable( ${PROJECT_NAME}
+    src_test/test.cpp
+    ${SRC_TEST}
+    ${EXTERNAL}
+    ${GTEST_LIBRARY} )
+
+target_link_libraries( ${PROJECT_NAME}
+    ${V_LIBRARIES}
+    ${GTEST_LIBRARY}
+    -ldl )
 
 #========================================================================================
 

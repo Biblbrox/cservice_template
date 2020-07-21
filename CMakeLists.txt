@@ -44,6 +44,7 @@ include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
 #========================================================================================
 
 add_executable( ${PROJECT_NAME}
+    src/main.cpp
     ${CFG}
     ${SRC}
     ${EXTERNAL} )
