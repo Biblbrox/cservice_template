@@ -1,44 +1,36 @@
-# Source structure
+# Test sources structure
 
 ```
-src/
-├── config
-│   ├── config.cmake
-│   ├── config.cpp
-│   ├── config.h
+src_test/
+├── config_test
+│   ├── config_test.cmake
+│   ├── config_test.cpp
+│   ├── config_test.h
 │   └── README.md
-├── core
-│   ├── core.cmake
-│   ├── core.cpp
-│   ├── core.h
+├── core_test
+│   ├── core_test.cmake
+│   ├── core_test.cpp
+│   ├── core_test.h
 │   └── README.md
-├── defs
-│   ├── defs.cmake
-│   ├── defs.h
+├── pack_test
+│   ├── pack_test.cmake
+│   ├── pack_test.cpp
+│   ├── pack_test.h
 │   └── README.md
-├── main.cpp
-├── pack
-│   ├── pack.cmake
-│   ├── pack.cpp
-│   ├── pack.h
-│   └── README.md
-├── plot
-│   ├── plot.cmake
-│   ├── README.md
-│   ├── view.cpp
-│   └── view.h
-├── publish
-│   ├── publish.cmake
-│   ├── publish.cpp
-│   ├── publish.h
+├── publish_test
+│   ├── publish_test.cmake
+│   ├── publish_test.cpp
+│   ├── publish_test.h
 │   └── README.md
 ├── README.md
-├── src.cmake
-└── subscribe
-    ├── README.md
-    ├── subscribe.cmake
-    ├── subscribe.cpp
-    └── subscribe.h
+├── src_test.cmake
+├── subscribe_test
+│   ├── README.md
+│   ├── subscribe_test.cmake
+│   ├── subscribe_test.cpp
+│   └── subscribe_test.h
+└── test.cpp
+
 ```
 
 ---

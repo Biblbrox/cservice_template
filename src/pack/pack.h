@@ -22,11 +22,12 @@ class Data : ZcmService
 {
 public:
 
-    /*! \fn void operator =( const ZcmService& data );
+    /*! \fn Data & operator =( const ZcmService& data );
      * \brief Convert ZcmService data to custom format.
      * \param[in] data Message data.
+     * \return Overloaded data;
      */
-    void operator =( const ZcmService& data );
+    Data & operator =( const ZcmService& data );
 
     //-----------------------------------------------------------------------------------
 

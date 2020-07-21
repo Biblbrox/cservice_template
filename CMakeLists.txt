@@ -11,7 +11,7 @@ cmake_minimum_required( VERSION 3.10 )
 option( GUI FALSE )
 
 if ( GUI )
-    add_definitions( -DGUI )
+    #add_definitions( -DGUI )
     set( CMAKE_BUILD_TYPE "Debug" )
 else()
     set( CMAKE_BUILD_TYPE "Release" )

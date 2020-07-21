@@ -31,7 +31,7 @@ public:
      * \param[in] fname Path to configuration file.
      * \details Initialize _zcm node
      */
-    Subscribe( const Config& conf );
+    Subscribe( const Config& conf = {} );
 
     //! \brief default destructor.
     ~Subscribe() = default;

@@ -1,11 +1,8 @@
-# Config
+# Config tests
 
-Configuration file parsing class.
+Configuration file parsing class test.
 
 ---
-
-Formed in order to select the necessary groups of values from the configuration file.
-It is required to transfer the path to the file.
 
 See description of [configuration file](../../cfg/README.md).
 

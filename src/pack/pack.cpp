@@ -10,9 +10,11 @@
 #include "pack.h"
 
 //=======================================================================================
-void Data::operator =( const ZcmService& data )
+Data & Data::operator =( const ZcmService& data )
 {
-    _timestamp = data.u_timestamp;
+    this->_timestamp = data.u_timestamp;
+
+    return *this;
 }
 //=======================================================================================
 void Data::clear()

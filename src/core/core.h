@@ -30,7 +30,7 @@ public:
      * \param[in] fname Path to configuration file.
      * \details Initialize _zcm node.
      */
-    Core( const Config& conf );
+    Core( const Config& conf = {} );
 
     //! \brief default destructor.
     ~Core() = default;

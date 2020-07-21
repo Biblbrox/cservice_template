@@ -1,0 +1,33 @@
+#include "subscribe_test.h"
+#include "subscribe.h"
+#include "publish.h"
+#include "config.h"
+
+//=======================================================================================
+/*! \test TEST( SubscribeTest, test_constructor )
+ * \brief Various constructors.
+ */
+TEST( SubscribeTest, test_constructor )
+{
+    Subscribe sub1;
+    Config conf;
+    Subscribe sub2( conf );
+}
+//=======================================================================================
+/*! \test TEST( SubscribeTest, test_receive )
+ * \brief Receive ZCM message.
+ */
+TEST( SubscribeTest, test_receive )
+{
+    Config config;
+    auto channel = "TestChannel";
+    config.send.ch = channel;
+    config.receive.ch = channel;
+
+    Subscribe sub( config );
+
+    Publish pub( config );
+    ZcmService msg;
+    pub.send( 0, msg );
+}
+//=======================================================================================

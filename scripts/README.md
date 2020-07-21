@@ -42,7 +42,13 @@ Scripts for app manipulating.
 
 - [test.sh](test.sh)
 
-    Starts unit testing of the service code.
+    Starts unit testing of the service code with code coverage.
+
+---
+
+- [coverage.sh](coverage.sh)
+
+    Starts code coverage by unit tests.
 
 ---
 

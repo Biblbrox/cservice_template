@@ -16,3 +16,5 @@ cd build
 cmake ..
 
 make -j $(($(nproc) - 1))
+
+../scripts/doc.sh &> /dev/null
