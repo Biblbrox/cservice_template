@@ -16,6 +16,8 @@ CMakeLists.txt.*
 # Doxygen temporary files & folders
 doxygen*
 *.info*
+!doc/img/doxygen.png
 
 # Code coverage temporary files & folders
 coverage*
+!doc/img/coverage.png

@@ -26,6 +26,6 @@ To visualize open in browser you prefer or:
 ```
 firefox ./doc/doxygen/html/index.html
 ```
-![coverage](img/doxygen.png)
+![doxygen](img/doxygen.png)
 
 ---
