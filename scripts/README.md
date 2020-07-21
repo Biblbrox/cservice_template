@@ -48,7 +48,14 @@ Scripts for app manipulating.
 
 - [coverage.sh](coverage.sh)
 
-    Starts code coverage by unit tests.
+    Starts code coverage by unit tests. Two arguments need.
+
+*Example:* ```./scripts/coverage.sh tests/build_tests ../../doc/coverage```
+
+| Argument| Description                       | Example            |
+|---------|-----------------------------------|--------------------|
+| №1      | Path to tests build directory     | tests/build_tests  |
+| №2      | Path to output coverage directory | ../../doc/coverage |
 
 ---
 
