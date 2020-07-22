@@ -27,7 +27,7 @@ public:
 
     /*!
      * \brief constructor.
-     * \param[in] fname Path to configuration file.
+     * \param[in] conf Configuration settings.
      * \details Initialize _zcm node.
      */
     Core( const Config& conf = {} );

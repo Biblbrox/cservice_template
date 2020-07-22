@@ -9,7 +9,7 @@ PREVIEW_FLAG=$3
 [[ -z $SEARCH_STRING ]] && echo -e "\e[44mEmpty arg SEARCH_STRING\e[0m" && exit 1 
 [[ -z $REPLACE_STRING ]] && echo -e "\e[44mEmpty arg REPLACE_STRING\e[0m" && exit 1
 
-[[ $PREVIEW_FLAG != "preview" ]] && sed_arg="-i"
+[[ $PREVIEW_FLAG != "--preview" ]] && sed_arg="-i"
 
 
 file_list=''
