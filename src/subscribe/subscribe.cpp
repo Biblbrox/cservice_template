@@ -13,7 +13,7 @@
 
 //=======================================================================================
 Subscribe::Subscribe( const Config& conf )
-    : _conf ( std::move( conf )   )
+    : _conf ( conf                )
     , _zcm  ( conf.receive.target )
 {
     _pack.clear();
