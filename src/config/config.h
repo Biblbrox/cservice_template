@@ -35,89 +35,92 @@ public:
     //-----------------------------------------------------------------------------------
 
     /*! \struct Main
-     * \param debug Flag if need trace service info to log file.
      * \param str Struct name.
+     * \param debug Flag if need trace service info to log file.
      */
     struct Main
     {
-        bool debug { false };
+        const std::string str = "main";
 
-        std::string str { "main" };
+        bool debug { false };
 
     } main;
 
     //-----------------------------------------------------------------------------------
 
     /*! \struct Receive
+     * \param str     Struct name.
      * \param target  Inter Process Communications.
      * \param prefix  ZCM in channel prefix.
      * \param channel ZCM in channel name.
      * \param ch      Concatenated prefix and channel strings.
-     * \param str     Struct name.
      */
     struct Receive
     {
+        const std::string str { "receive" };
+
         std::string target  { "ipc" };
         std::string prefix  {};
         std::string channel {};
 
         std::string ch {};
-        std::string str { "receive" };
 
     } receive;
 
     //-----------------------------------------------------------------------------------
 
     /*! \struct Send
+     * \param str     Struct name.
      * \param target  Inter Process Communications.
      * \param prefix  ZCM out channel prefix.
      * \param channel ZCM out channel name.
      * \param ch      Concatenated prefix and channel strings.
-     * \param str     Struct name.
      */
     struct Send
     {
+        const std::string str { "send" };
+
         std::string target  { "ipc" };
         std::string prefix  {};
         std::string channel {};
 
         std::string ch {};
-        std::string str { "send" };
 
     } send;
 
     //-----------------------------------------------------------------------------------
 
     /*! \struct Logs
-     * \param need_trace   Flag if need log service messages to file.
-     * \param need_shared  Flag if need write all logging levels to one file.
+     * \param str          Struct name.
      * \param shared_name  Shared log filename.
-     * \param need_leveled Flag if need write each level of logging to its own file.
      * \param leveled_path Leveled logs path.
      * \param file_sizes   Log max size in Kb.
      * \param rotates      Max logs count.
-     * \param str          Struct name.
+     * \param need_trace   Flag if need log service messages to file.
+     * \param need_shared  Flag if need write all logging levels to one file.
+     * \param need_leveled Flag if need write each level of logging to its own file.
      */
     struct Logs
     {
-        bool need_trace = true;
+        const std::string str { "logs" };
 
-        bool need_shared = true;
         std::string shared_name = "$$FULL_APP.log";
-
-        bool need_leveled = true;
         std::string leveled_path = "$$APP_PATH/logs";
 
         uint file_sizes = 1e6;
         uint rotates {3};
+
+        bool need_trace = true;
+        bool need_shared = true;
+        bool need_leveled = true;
+
+        //-------------------------------------------------------------------------------
 
         /*! \fn void setup();
          * \brief Starts log data.
          * \details Check Logs flags and run logging if need.
          */
         void setup();
-
-        std::string str { "logs" };
 
     } logs;
 
