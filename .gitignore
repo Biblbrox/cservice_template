@@ -1,6 +1,7 @@
 # Qt Build temporary files & folders
 build*
 !build.sh
+!build-gui.sh
 !build_all.sh
 *.txt.user
 *user*
