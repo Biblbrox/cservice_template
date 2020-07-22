@@ -91,8 +91,14 @@ Scripts for app manipulating.
 
 *Example:* <br>
 
-```./scripts/rename.sh cservice_template cservice_template cservice_template preview``` - preview change files and lines.
+```./scripts/rename.sh cservice_template new_service preview``` - preview change files and lines.
 
-```./scripts/rename.sh cservice_template cservice_template cservice_template``` - recursively replace first argument to second in all files.
+```./scripts/rename.sh cservice_template new_service``` - recursively replace first argument to second in all files.
+
+| Argument      | Description                        | Example            |
+|---------------|------------------------------------|--------------------|
+| №1            | The name to be replaced            | cservice_template  |
+| №2            | New service naming                 | new_service        |
+| №3 (optional) | File display mode for modification | --preview          |
 
 ---

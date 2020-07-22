@@ -31,7 +31,7 @@ class View
 public:
 
     /*! \brief constructor.
-     * \param[in] name Path to configuration file.
+     * \param[in] name Plot widget title.
      * \details Initialize _plot PCL visualizer basic options.
      */
     View( const std::string& name = {} );
