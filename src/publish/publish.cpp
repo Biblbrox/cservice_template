@@ -14,7 +14,7 @@
 
 //=======================================================================================
 Publish::Publish( const Config& conf )
-    : _conf ( std::move( conf ) )
+    : _conf ( conf              )
     , _zcm  ( conf.send.target  )
 {}
 //=======================================================================================
@@ -23,7 +23,7 @@ Publish::Publish( const Config& conf )
 //=======================================================================================
 void Publish::send( const int64_t& rec, const ZcmService& data )
 {
-    ZcmService msg = std::move( data );
+    ZcmService msg = data;
     msg.u_timestamp = data.u_timestamp;
     msg.processing_time = int32_t( vtime_point::now().microseconds().count() - rec );
 
