@@ -1,5 +1,15 @@
-#ifndef CONFIG_TEST_H
-#define CONFIG_TEST_H
+/*! \file config_test.h
+ * \brief ConfigTest class interface.
+ *
+ * Config tests.
+ *
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
+#pragma once
 
 #include "gtest/gtest.h"
 
@@ -10,5 +20,3 @@
 class ConfigTest: public testing::Test
 {};
 //=======================================================================================
-
-#endif // CONFIG_TEST_H

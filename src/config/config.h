@@ -9,8 +9,7 @@
 
 //=======================================================================================
 
-#ifndef CONFIG_H
-#define CONFIG_H
+#pragma once
 
 #include "vsettings.h"
 #include "vlog.h"
@@ -23,13 +22,10 @@ class Config
 {
 public:
 
-    /*!
-     * \brief Config constructor.
-     * \details Build default settings if cannot parse them from config.
-     */
+    //! \details Build default settings if cannot parse them from config.
     Config();
 
-    //! \brief Default Config deconstructor.
+    //! \details Default Config deconstructor.
     ~Config() = default;
 
     //-----------------------------------------------------------------------------------
@@ -154,5 +150,3 @@ private:
 
 };
 //=======================================================================================
-
-#endif // CONFIG_H

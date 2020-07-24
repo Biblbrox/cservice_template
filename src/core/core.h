@@ -9,8 +9,7 @@
 
 //=======================================================================================
 
-#ifndef CORE_H
-#define CORE_H
+#pragma once
 
 #include "config.h"
 #include "pack.h"
@@ -26,7 +25,6 @@ class Core
 public:
 
     /*!
-     * \brief constructor.
      * \param[in] conf Configuration settings.
      * \details Initialize _zcm node.
      */
@@ -68,5 +66,3 @@ private:
 
 };
 //=======================================================================================
-
-#endif // CORE_H

@@ -1,5 +1,15 @@
-#ifndef CORE_TEST_H
-#define CORE_TEST_H
+/*! \file core_test.h
+ * \brief CoreTest class interface.
+ *
+ * Core tests.
+ *
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
+#pragma once
 
 #include "gtest/gtest.h"
 
@@ -10,5 +20,3 @@
 class CoreTest: public testing::Test
 {};
 //=======================================================================================
-
-#endif // CORE_TEST_H

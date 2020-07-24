@@ -9,8 +9,7 @@
 
 //=======================================================================================
 
-#ifndef VIEW_H
-#define VIEW_H
+#pragma once
 
 #include "config.h"
 
@@ -30,7 +29,7 @@ class View
 {
 public:
 
-    /*! \brief constructor.
+    /*!
      * \param[in] name Plot widget title.
      * \details Initialize _plot PCL visualizer basic options.
      */
@@ -64,5 +63,3 @@ private:
 
 };
 //=======================================================================================
-
-#endif // VIEW_H

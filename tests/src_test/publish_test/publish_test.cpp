@@ -1,3 +1,12 @@
+/*! \file publish_test.cpp
+ * \brief PublishTest class implementation.
+
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
 #include "publish_test.h"
 #include "publish.h"
 #include "config.h"

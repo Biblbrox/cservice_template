@@ -1,5 +1,15 @@
-#ifndef PUBLISH_TEST_H
-#define PUBLISH_TEST_H
+/*! \file publish_test.h
+ * \brief PublishTest class interface.
+ *
+ * Publish tests.
+ *
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
+#pragma once
 
 #include "gtest/gtest.h"
 
@@ -10,5 +20,3 @@
 class PublishTest: public testing::Test
 {};
 //=======================================================================================
-
-#endif // PUBLISH_TEST_H

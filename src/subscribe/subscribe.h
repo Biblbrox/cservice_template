@@ -9,8 +9,7 @@
 
 //=======================================================================================
 
-#ifndef SUBSCRIBE_H
-#define SUBSCRIBE_H
+#pragma once
 
 #include "config.h"
 #include "pack.h"
@@ -27,7 +26,6 @@ class Subscribe
 public:
 
     /*!
-     * \brief constructor.
      * \param[in] fname Configuration settings.
      * \details Initialize _zcm node
      */
@@ -59,5 +57,3 @@ private:
 
 };
 //=======================================================================================
-
-#endif // SUBSCRIBER_H

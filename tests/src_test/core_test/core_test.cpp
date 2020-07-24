@@ -1,3 +1,12 @@
+/*! \file core_test.cpp
+ * \brief CoreTest class implementation.
+
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
 #include "core_test.h"
 #include "core.h"
 #include "pack.h"

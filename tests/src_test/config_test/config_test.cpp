@@ -1,3 +1,12 @@
+/*! \file config_test.cpp
+ * \brief ConfigTest class implementation.
+
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
 #include "config_test.h"
 #include "config.h"
 

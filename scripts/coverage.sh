@@ -14,6 +14,6 @@ lcov --capture --directory . --output-file coverage.info
 lcov --remove coverage.info -o coverage.info \
 	"/usr*" \
 	"*src_test/*" \
-	"*external/*"
+	"*external/*" 
 genhtml coverage.info --output-directory=$COVERAGE_PATH
 

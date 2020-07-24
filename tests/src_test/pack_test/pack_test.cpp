@@ -1,3 +1,12 @@
+/*! \file pack_test.cpp
+ * \brief PackTest class implementation.
+
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
 #include "pack_test.h"
 #include "pack.h"
 

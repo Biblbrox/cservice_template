@@ -9,8 +9,7 @@
 
 //=======================================================================================
 
-#ifndef PUBLISH_H
-#define PUBLISH_H
+#pragma once
 
 #include "config.h"
 
@@ -28,7 +27,6 @@ class Publish
 public:
 
     /*!
-     * \brief constructor.
      * \param[in] fname Configuration settings.
      * \details Initialize _zcm node.
      */
@@ -58,5 +56,3 @@ private:
 
 };
 //=======================================================================================
-
-#endif // PUBLISH_H

@@ -1,5 +1,15 @@
-#ifndef SUBSCRIBE_TEST_H
-#define SUBSCRIBE_TEST_H
+/*! \file subscribe_test.h
+ * \brief SubscribeTest class interface.
+ *
+ * Subscribe tests.
+ *
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
+#pragma once
 
 #include "gtest/gtest.h"
 
@@ -10,5 +20,3 @@
 class SubscribeTest: public testing::Test
 {};
 //=======================================================================================
-
-#endif // SUBSCRIBE_TEST_H

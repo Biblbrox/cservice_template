@@ -1,3 +1,12 @@
+/*! \file subscribe_test.cpp
+ * \brief SubscribeTest class implementation.
+
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
 #include "subscribe_test.h"
 #include "subscribe.h"
 #include "publish.h"

@@ -7,8 +7,7 @@
 
 //=======================================================================================
 
-#ifndef DEFS_H
-#define DEFS_H
+#pragma once
 
 #include <sys/types.h>
 
@@ -23,5 +22,3 @@ using VecFlt = std::vector<float>;
 using VecDbl = std::vector<double>;
 
 //=======================================================================================
-
-#endif // DEFS_H

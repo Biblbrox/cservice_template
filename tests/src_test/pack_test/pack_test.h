@@ -1,5 +1,15 @@
-#ifndef PACK_TEST_H
-#define PACK_TEST_H
+/*! \file pack_test.h
+ * \brief PackTest class interface.
+ *
+ * Pack tests.
+ *
+ * \authors Dmitrii Leliuhin
+ * \date July 2020
+ */
+
+//=======================================================================================
+
+#pragma once
 
 #include "gtest/gtest.h"
 
@@ -10,5 +20,3 @@
 class PackTest: public testing::Test
 {};
 //=======================================================================================
-
-#endif // PACK_TEST_H
