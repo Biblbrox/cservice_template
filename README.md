@@ -1,165 +1,148 @@
 # cservice_template
+
+[[Build status](http://bamboo.niias/browse/TOOL-CSERVICEBUILD/latest)]
+[[Tests status](http://bamboo.niias/browse/TOOL-CSERVICEBUILD/test)]
+[[License](./doc/LICENSE.md)]
+
+
 Service for ...
 
 **cservice_template** is the software designed for ... It is developed based on C++17 and provides easy-to-use API. With **cservice_template**, users can quickly connect to ..., receive ... data and transmit decision via ....
 
 ---
 
-## Task
+## Table of contents
 
-The task consists of several steps:
-
-1. Physical connection of the sensor via RS 485 to USB converter.
-2. Software connection to the port and capture lidar points.
-3. Interpretation of data in the form of determining deviations from normalized values.
-4. The issuance of the result of the occupation of the zone on the UDP at the localhost port 9000. (0 - no obstacles, 1 - are obstacles, 2 - wrong lidar connection).
-
----
-
-## Dependencies
-
-- GCC [5.x.x]
-- CMake [3.2]
-- GoogleTest
-- LibUSB
+1.  [ Overview ](#overview)
+2.  [ Dependencies ](#dependencies)
+3.  [ Installation ](#installation)
+4.  [ Run ](#run)
+5.  [ Tests ](#tests)
+6.  [ Release History ](#release)
+7.  [ Contributing ](#contributing)
+8.  [ Support ](#support)
+9.  [ License ](#license)
+10. [ FAQ ](#faq)
 
 ---
 
-## Installation
+<a name="overview"></a>
+## 1. Overview
 
-The installation procedures in Linux Ubuntu 16.04/14.04 32-bit LTS or Linux Mint 19.* 64-bit are shown here as examples.
-
-Describing how to install all development dependencies and how to run an automated test-suite of some kind. Potentially do this for multiple platforms.
-
-```sudo apt-get install gcc-5 g++-5 libusb-1.0  ```
+A service is a template for proper use by developers within a company. The number of services is constantly growing, however, their base remains unchanged. In the current repository, the author has tried to simplify many routine tasks when creating a new repository, including: automatic code documentation, static analysis, code coverage with Unit-tests, the use of generally accepted company submodules to interact with other services in the system.
 
 ---
 
-For trace service messages change:<br/>
-```
-DEFINES -= TRACE
-```
-to
-```
-DEFINES += TRACE
-```
+<a name="dependencies"></a>
+## 2. Dependencies
+
+Basic:<br>
+
+- [build-essential](https://packages.debian.org/ru/sid/build-essential)
+- [C++17 (GCC-8, G++-8)](https://en.cppreference.com/w/cpp/17)
+- [CMake (> 3.10)](https://cmake.org)
+- [Make (> 4.2)](https://en.wikipedia.org/wiki/Make_(software))
+- [LCov (> 1.14)](http://ltp.sourceforge.net/coverage/lcov.php)
+- [GCov (>9.3)](https://linux.die.net/man/1/gcov)
+- [CLang-Tidy (> 10.0)](https://clang.llvm.org/extra/clang-tidy/)
+- [CLang-Format (> 10.0)](https://clang.llvm.org/docs/ClangFormat.html)
+- [Ninja (> 1.10)](https://ninja-build.org)
+
+Third-party (for visualization):<br>
+
+- [Doxygen (> 1.8)](https://www.doxygen.nl/index.html)
+- [Graphviz](https://graphviz.org)
+- [Latex](https://www.latex-project.org/get/)
+- [Tree](https://pingvinus.ru/note/tree)
+- [PCL (> 1.10)](https://pointclouds.org)
 
 ---
 
-## [Tests](./test/TEST.md)
+<a name="installation"></a>
+## 3. [Installation](./doc/INSTALL.md)
 
-Google Tests used for Unit-testing.<br />
-
-For installation it is necessary to run:<br />
-
-```
-sudo apt install libgtest-dev
-cd /usr/src/gtest/
-sudo cmake -DBUILD_SHARED_LIBS=ON
-sudo make
-sudo cp *.so /usr/lib
-```
+The installation procedures in Linux Ubuntu 16.04/14.04 32-bit LTS or Linux Mint 19.* /20. * 64-bit are shown [here](./doc/INSTALL.md) as examples.
 
 ---
 
-### Submodules:
+<a name="run"></a>
+## 4. Run
 
-[LeddarTech SDK](https://github.com/dleliuhin/LeddarSDK) requires [CMake 3.0.0+](https://cmake.org/) as dependencies. You need to install cmake using apt:
-```
-sudo apt install cmake
-```
-
-### Compile Livox SDK
-
-No need to compile library.
+Make changes according to task in [configuration file](./cfg).
 
 ```
-git clone ssh://git@bb.niias:7999/~d.leliuhin/door_detector.git
-cd door_detector
-git checkout develop
-./scripts/update_submodules.sh
+cd cservice_template
+git checkout release
 ```
----
-
-## Run
-
+Without [visualization](./doc/README.md): ```./scripts/build.sh``` <br>
+With [visualization](./doc/README.md): ```./scripts/build-gui.sh```
 
 ```
-cd door_detector
-git checkout master
-./scripts/build.sh
 ./scripts/run.sh
 ```
 
-Or using Qt Creator:
+Or using [Qt Creator IDE](https://www.qt.io/download):
 
-**Projects->Run->.*-c ../LivoxDriver/cfg/livox_driver.cfg -p /tmp/niias/door_detector
 
----
+Without [visualization](./doc/README.md): **Projects->Run->.*-c ../cservice_template/cfg/cservice_template.cfg -p /tmp/niias/cservice_template<br>
 
-Optional:<br />
+With [visualization](./doc/README.md): <br>
+- *Projects->Build->CMake->GUI->ON->Apply Configuration Changes* <br>
+- *Projects->Run->* ```-c ../cservice_template/cfg/cservice_template.cfg -p /tmp/niias/cservice_template``` <br>
 
-```--help``` - print arg help.<br />
-```-p pid-name``` - pid name.<br />
-```-c config-path``` - configuration file path.<br />
-```--print-conf``` - print config & exit.<br />
-```--save-conf``` - save config alongside the binary & exit.<br />
+You can find more scripts in [scripts/](./scripts).
 
 ---
 
-### Configuration file setup
+<a name="tests"></a>
+## 5. [Tests](./tests/README.md)
 
 ---
 
-**[main]**<br/>
-
-| Parameter | Description                                 | Type | Default|
-| :---      | :-----------------------------------------: | :--: | :----: |
-| debug     | Flag if need trace service info to log file | bool | *false*|
-
-<br/>
+<a name="release"></a>
+## 6. [Release History](./doc/HISTORY.md)
 
 ---
 
-**[receive]**<br/>
+<a name="contributing"></a>
+## 7. Contributing
 
-| Parameter | Description                                 | Type  | Default|
-| :---      | :-----------------------------------------: | :---- | :----:  |
-| target    |                                             | string| *ipc*   |
-| prefix    |                                             |       |         |
-| channel   |                                             |       |         |
-
-<br/>
-
----
-
-**[send]**<br/>
-
----
-
-## [Release History](./HISTORY.md)
+1. Fork it (<ssh://git@bb.niias:7999/tool/cservice_template.git>).
+2. Read [Readme](./README.md), [License](./doc/LICENSE.md), [Code of Conduct](./doc/CODE_OF_CONDUCT.md) and [Condributing Guidelines][contributing].
+3. Create your fix or feature branch (`git checkout -b feature/name`).
+4. Make changes according to [Condributing Guidelines][contributing].
+5. Make unit tests.
+6. Build repo and tests.
+7. Correct Readmes for whole directories.
+8. Ensure that it is likely to be merged.
+9. Commit your changes (```git add . & git commit -m "Feature. Add wrapper class WrapperClass."```).
+10. Push to the branch (```git push origin feature/new-wrapper-class```)
+11. Create a new Pull Request to `develop`
 
 ---
 
-## Contributing
-
-1. Clone it (<ssh://git@bb.niias:7999/~d.leliuhin/cservice_template.git>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git add . & git commit -m "Feature. Add some fooBar."`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request to `develop`
-
----
-
-## Support
+<a name="support"></a>
+## 8. Support
 
 Reach out to me at one of the following places!
 
-- Telegram at <a href="http://https://telegram.org" target="_blank">`@Author`</a>
-- Email at author@gmail.com.
+- Telegram at - <a href="http://https://telegram.org" target="_blank">`@DLeliuhin`</a>
+- Email at - dleliuhin@gmail.com.
 
 ---
 
-## [FAQ](./doc/FAQ.md)
+<a name="license"></a>
+## 9. [License](./doc/LICENSE.md)
 
 ---
+
+<a name="faq"></a>
+## 10. [FAQ](doc/FAQ.md)
+
+---
+
+[contributing]: http://confluence.niias/pages/viewpage.action?pageId=7340222
+
+---
+
+**JSC NIIAS**

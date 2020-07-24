@@ -9,7 +9,7 @@ else
         mkdir -p build
 fi
 
-sed -i 's/add_definitions( -DTRACE )/#add_definitions( -DTRACE )/g' CMakeLists.txt
+sed -i 's/add_definitions( -DGUI )/#add_definitions( -DGUI )/g' CMakeLists.txt
 
 cd build
 

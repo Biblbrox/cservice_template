@@ -8,42 +8,52 @@ cmake_minimum_required( VERSION 3.10 )
 
 #========================================================================================
 
-add_definitions( -DGUI )
-add_definitions( -DTRACE )
+option( GUI FALSE )
+
+if ( GUI )
+    add_definitions( -DGUI )
+    set( CMAKE_BUILD_TYPE "Debug" )
+else()
+    set( CMAKE_BUILD_TYPE "Release" )
+endif()
 
 #========================================================================================
 
-#set( CMAKE_BUILD_TYPE "Release" )
-set( CMAKE_BUILD_TYPE "Debug" )
+option( V_DEVELOP FALSE )
+
+if ( V_DEVELOP )
+    add_definitions( -DV_DEVELOP )
+endif()
+
+#========================================================================================
 
 set( CMAKE_CXX_STANDARD 17 )
 set( CMAKE_CXX_STANDARD_REQUIRED ON )
 
 #========================================================================================
 
-include( ${CMAKE_CURRENT_SOURCE_DIR}/vlibs.cmake )
-include( ${VLIBS_DIR}/cmake/pthread.cmake )
-include( ${CMAKE_CURRENT_SOURCE_DIR}/niias_srv_supply/niias_srv_supply.cmake )
+include( ${CMAKE_CURRENT_SOURCE_DIR}/external/external.cmake )
 
 #========================================================================================
 
 include_directories( ${CMAKE_SOURCE_DIR} )
 
-include( ${CMAKE_CURRENT_SOURCE_DIR}/config/config.cmake )
-include( ${CMAKE_CURRENT_SOURCE_DIR}/defs/defs.cmake )
+include( ${CMAKE_CURRENT_SOURCE_DIR}/cfg/cfg.cmake )
+include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
 
 #========================================================================================
 
-add_executable(
-    ${PROJECT_NAME}
-    ${DEFS}
-    ${CONFIG}
-    ${V_HEADERS}
-    ${V_SOURCES}
-    cfg/*
-    main.cpp )
+add_executable( ${PROJECT_NAME}
+    src/main.cpp
+    ${CFG}
+    ${SRC}
+    ${EXTERNAL} )
 
-target_link_libraries( ${PROJECT_NAME} ${V_LIBRARIES} -ldl )
+target_link_libraries( ${PROJECT_NAME}
+    ${VTK_LIBRARIES}
+    ${PCL_LIBRARIES}
+    ${V_LIBRARIES}
+    -ldl )
 
 #========================================================================================
 

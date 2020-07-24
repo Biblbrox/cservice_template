@@ -1,5 +1,6 @@
 #!/bin/bash
-rm -rf ../build-door_detector*
-rm ../door_detector.tar.gz
+rm -rf ../build-cservice_template*
+rm ../cservice_template.tar.gz
 rm -rf build/*
-rm -rf door_detector.pro.*
+rm -rf cservice_template.pro.*
+rm CMakeLists.txt.*
