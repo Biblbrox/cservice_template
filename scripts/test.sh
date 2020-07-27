@@ -17,6 +17,6 @@ shopt -s extglob
 
 ./test_cservice_template
 
-../../scripts/coverage.sh . ../../doc/coverage &> /dev/null
+../../scripts/coverage.sh . ../../doc/coverage
 
 rm -rf !("test_cservice_template")
