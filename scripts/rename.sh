@@ -11,7 +11,6 @@ PREVIEW_FLAG=$3
 
 [[ $PREVIEW_FLAG != "--preview" ]] && sed_arg="-i"
 
-
 file_list=''
 
 file_list=$(grep -RHIn --exclude-dir="external" --exclude-dir=".git" "$SEARCH_STRING" ./ | \
@@ -27,4 +26,6 @@ for file_name in $file_list; do
 done
 
 echo "Replacement from $SEARCH_STRING to $REPLACE_STRING done"
+
+mv cfg/$1.cfg cfg/$2.cfg
 
