@@ -37,7 +37,7 @@ public:
 
     /*! \fn void run( const Pack& pack );
      * \brief Run data processing.
-     * \param[in] rec raw timestamp.
+     * \param[in] pack Raw timestamp.
      */
     void run( const Pack& pack );
 

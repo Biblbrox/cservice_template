@@ -26,7 +26,7 @@ class Subscribe
 public:
 
     /*!
-     * \param[in] fname Configuration settings.
+     * \param[in] conf Configuration settings.
      * \details Initialize _zcm node
      */
     Subscribe( const Config& conf = {} );

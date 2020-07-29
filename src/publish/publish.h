@@ -27,7 +27,7 @@ class Publish
 public:
 
     /*!
-     * \param[in] fname Configuration settings.
+     * \param[in] conf Configuration settings.
      * \details Initialize _zcm node.
      */
     Publish( const Config& conf = {} );
