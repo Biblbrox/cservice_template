@@ -9,8 +9,8 @@
 
 #include "core.h"
 
-#include "vtime_point.h"
 #include "vlog.h"
+#include "vtime_point.h"
 
 //=======================================================================================
 Core::Core( const Config& conf )

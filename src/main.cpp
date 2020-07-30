@@ -11,9 +11,9 @@
 //=======================================================================================
 
 #include "subscribe.h"
-#include "publish.h"
 #include "config.h"
 #include "core.h"
+#include "publish.h"
 #ifdef GUI
 #include "view.h"
 #endif
@@ -51,7 +51,7 @@ int main( int argc, char **argv )
         config.logs.setup();
     }
 
-    //-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
 
     // Link signals -> slots
 

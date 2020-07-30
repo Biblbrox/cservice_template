@@ -9,8 +9,8 @@
 
 #include "publish.h"
 
-#include "vtime_point.h"
 #include "vlog.h"
+#include "vtime_point.h"
 
 //=======================================================================================
 Publish::Publish( const Config& conf )
