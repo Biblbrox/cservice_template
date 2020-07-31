@@ -14,8 +14,9 @@
 #include "config.h"
 #include "pack.h"
 
-#include "vzcm.h"
 #include "vsignal.h"
+
+#include "vzcm.h"
 
 //=======================================================================================
 /*! \class Subscribe

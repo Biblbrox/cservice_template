@@ -39,7 +39,7 @@ void check_default_settings( const Config& conf )
     ASSERT_EQ( "$$FULL_APP.log",  conf.logs.shared_name );
     ASSERT_EQ( true,              conf.logs.need_leveled );
     ASSERT_EQ( "$$APP_PATH/logs", conf.logs.leveled_path );
-    ASSERT_EQ( 1e6,               conf.logs.file_sizes );
+    ASSERT_EQ( 1e+06,             conf.logs.file_sizes );
     ASSERT_EQ( 3,                 conf.logs.rotates );
     ASSERT_EQ( "logs",            conf.logs.str );
 }

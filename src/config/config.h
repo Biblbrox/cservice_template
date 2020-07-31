@@ -11,8 +11,12 @@
 
 #pragma once
 
-#include "vsettings.h"
 #include "vlog.h"
+#include "vsettings.h"
+
+//=======================================================================================
+
+//static constexpr uint log_size = 1e6;
 
 //=======================================================================================
 /*! \class Config
@@ -103,7 +107,7 @@ public:
         std::string shared_name = "$$FULL_APP.log";
         std::string leveled_path = "$$APP_PATH/logs";
 
-        uint file_sizes = 1e6;
+        uint file_sizes;// = log_size;
         uint rotates {3};
 
         bool need_trace = true;

@@ -13,8 +13,9 @@
 
 #include "config.h"
 
-#include "vzcm.h"
 #include "vsignal.h"
+
+#include "vzcm.h"
 
 #include "ZcmService.hpp"
 
