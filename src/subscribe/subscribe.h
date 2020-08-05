@@ -14,8 +14,9 @@
 #include "config.h"
 #include "pack.h"
 
-#include "vzcm.h"
 #include "vsignal.h"
+
+#include "vzcm.h"
 
 //=======================================================================================
 /*! \class Subscribe
@@ -26,7 +27,7 @@ class Subscribe
 public:
 
     /*!
-     * \param[in] fname Configuration settings.
+     * \param[in] conf Configuration settings.
      * \details Initialize _zcm node
      */
     Subscribe( const Config& conf = {} );

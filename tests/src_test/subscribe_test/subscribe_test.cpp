@@ -30,8 +30,8 @@ TEST( SubscribeTest, test_receive )
 {
     Config config;
     auto channel = "TestChannel";
-    config.send.ch = channel;
-    config.receive.ch = channel;
+    config.send.channel.full = channel;
+    config.receive.channel.full = channel;
 
     Subscribe sub( config );
 

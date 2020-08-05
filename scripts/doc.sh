@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd doc
-doxygen
+doxygen 1>/dev/null

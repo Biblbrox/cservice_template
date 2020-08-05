@@ -9,10 +9,8 @@ else
         mkdir -p build
 fi
 
-sed -i 's/add_definitions( -DGUI )/#add_definitions( -DGUI )/g' CMakeLists.txt
-
 cd build
 
-cmake ..
+cmake -DGUI=OFF .. 
 
 make -j $(($(nproc) - 1))

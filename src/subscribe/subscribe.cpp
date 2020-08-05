@@ -18,7 +18,8 @@ Subscribe::Subscribe( const Config& conf )
 {
     _pack.clear();
 
-    _zcm.subscribe<ZcmService>( conf.receive.ch, [ this ]( const ZcmService& msg )
+    _zcm.subscribe<ZcmService>( conf.receive.channel.full,
+                                [ this ]( const ZcmService& msg )
     {
         _pack.data = msg;
 

@@ -38,11 +38,13 @@ Scripts for app manipulating.
 
     Performs static analysis of the project code using CLang-Tidy.
 
+See CLang-Tidy static analyzer [option list](https://clang.llvm.org/extra/clang-tidy/checks/list.html).
+
 ---
 
 - [test.sh](test.sh)
 
-    Starts unit testing of the service code with code coverage.
+    Starts Unit testing of the service code with code coverage.
 
 ---
 
@@ -56,6 +58,16 @@ Scripts for app manipulating.
 |---------|-----------------------------------|--------------------|
 | №1      | Path to tests build directory     | tests/build_tests  |
 | №2      | Path to output coverage directory | ../../doc/coverage |
+
+---
+
+- [codestyle.sh](codestyle.sh)
+
+    Checks code based on [readability* group](https://clang.llvm.org/extra/clang-tidy/checks/list.html) code style.
+
+*Example:* ```./scripts/codestyle.sh```
+
+More [info](http://bb.niias/projects/TOOL/repos/cpp_codestyle/browse).
 
 ---
 

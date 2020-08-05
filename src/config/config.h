@@ -11,8 +11,28 @@
 
 #pragma once
 
-#include "vsettings.h"
 #include "vlog.h"
+#include "vsettings.h"
+
+//=======================================================================================
+
+static constexpr uint log_size = 1e6;
+static constexpr uint log_rotates = 3U;
+
+//=======================================================================================
+/*! \struct Channel
+ * \param prefix ZCM channel prefix.
+ * \param name   ZCM channel name.
+ * \param full   Concatenated prefix and name strings.
+ */
+struct Channel
+{
+    std::string prefix;
+    std::string name;
+    std::string full;
+};
+//=======================================================================================
+
 
 //=======================================================================================
 /*! \class Config
@@ -47,19 +67,15 @@ public:
     /*! \struct Receive
      * \param str     Struct name.
      * \param target  Inter Process Communications.
-     * \param prefix  ZCM in channel prefix.
-     * \param channel ZCM in channel name.
-     * \param ch      Concatenated prefix and channel strings.
+     * \param channel ZCM data from channel.
      */
     struct Receive
     {
         const std::string str { "receive" };
 
-        std::string target  { "ipc" };
-        std::string prefix  {};
-        std::string channel {};
+        std::string target { "ipc" };
 
-        std::string ch {};
+        Channel channel;
 
     } receive;
 
@@ -68,19 +84,15 @@ public:
     /*! \struct Send
      * \param str     Struct name.
      * \param target  Inter Process Communications.
-     * \param prefix  ZCM out channel prefix.
-     * \param channel ZCM out channel name.
-     * \param ch      Concatenated prefix and channel strings.
+     * \param channel ZCM data to channel.
      */
     struct Send
     {
         const std::string str { "send" };
 
-        std::string target  { "ipc" };
-        std::string prefix  {};
-        std::string channel {};
+        std::string target { "ipc" };
 
-        std::string ch {};
+        Channel channel;
 
     } send;
 
@@ -103,12 +115,12 @@ public:
         std::string shared_name = "$$FULL_APP.log";
         std::string leveled_path = "$$APP_PATH/logs";
 
-        uint file_sizes = 1e6;
-        uint rotates {3};
+        uint file_sizes { log_size };
+        uint rotates = log_rotates;
 
-        bool need_trace = true;
-        bool need_shared = true;
-        bool need_leveled = true;
+        bool need_trace { true };
+        bool need_shared { true };
+        bool need_leveled { true };
 
         //-------------------------------------------------------------------------------
 

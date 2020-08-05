@@ -11,9 +11,9 @@
 //=======================================================================================
 
 #include "subscribe.h"
-#include "publish.h"
 #include "config.h"
 #include "core.h"
+#include "publish.h"
 #ifdef GUI
 #include "view.h"
 #endif
@@ -38,7 +38,7 @@
  *
  * \return App exit status.
  */
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
     // Parse config && create PID
 

@@ -28,7 +28,7 @@ TEST( PublishTest, test_constructor )
 TEST( PublishTest, test_send )
 {
     Config conf;
-    conf.send.ch = "OutChannel";
+    conf.send.channel.full = "OutChannel";
 
     Publish publisher( conf );
 

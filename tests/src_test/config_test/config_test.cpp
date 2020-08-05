@@ -23,15 +23,15 @@ void check_default_settings( const Config& conf )
     ASSERT_EQ( "main", conf.main.str );
 
     ASSERT_EQ( "ipc",     conf.receive.target );
-    ASSERT_EQ( "",        conf.receive.prefix );
-    ASSERT_EQ( "",        conf.receive.channel );
-    ASSERT_EQ( "",        conf.receive.ch );
+    ASSERT_EQ( "",        conf.receive.channel.prefix );
+    ASSERT_EQ( "",        conf.receive.channel.name );
+    ASSERT_EQ( "",        conf.receive.channel.full );
     ASSERT_EQ( "receive", conf.receive.str );
 
     ASSERT_EQ( "ipc",  conf.send.target );
-    ASSERT_EQ( "",     conf.send.prefix );
-    ASSERT_EQ( "",     conf.send.channel );
-    ASSERT_EQ( "",     conf.send.ch );
+    ASSERT_EQ( "",     conf.send.channel.prefix );
+    ASSERT_EQ( "",     conf.send.channel.name );
+    ASSERT_EQ( "",     conf.send.channel.full );
     ASSERT_EQ( "send", conf.send.str );
 
     ASSERT_EQ( true,              conf.logs.need_trace );
@@ -40,7 +40,7 @@ void check_default_settings( const Config& conf )
     ASSERT_EQ( true,              conf.logs.need_leveled );
     ASSERT_EQ( "$$APP_PATH/logs", conf.logs.leveled_path );
     ASSERT_EQ( 1e6,               conf.logs.file_sizes );
-    ASSERT_EQ( 3,                 conf.logs.rotates );
+    ASSERT_EQ( log_rotates,       conf.logs.rotates );
     ASSERT_EQ( "logs",            conf.logs.str );
 }
 //=======================================================================================
@@ -79,11 +79,11 @@ TEST( ConfigTest, test_by_default )
 
     ASSERT_EQ( "ipc", settings.subgroup( Config().receive.str ).get( "target" ) );
     ASSERT_EQ( "",    settings.subgroup( Config().receive.str ).get( "prefix" ) );
-    ASSERT_EQ( "",    settings.subgroup( Config().receive.str ).get( "channel" ) );
+    ASSERT_EQ( "",    settings.subgroup( Config().receive.str ).get( "name" ) );
 
     ASSERT_EQ( "ipc", settings.subgroup( Config().send.str ).get( "target" ) );
     ASSERT_EQ( "",    settings.subgroup( Config().send.str ).get( "prefix" ) );
-    ASSERT_EQ( "",    settings.subgroup( Config().send.str ).get( "channel" ) );
+    ASSERT_EQ( "",    settings.subgroup( Config().send.str ).get( "name" ) );
 
     ASSERT_EQ( "true",    settings.subgroup( Config().logs.str ).get( "need_trace" ) );
     ASSERT_EQ( "true",    settings.subgroup( Config().logs.str ).get( "need_shared" ) );

@@ -13,8 +13,9 @@
 
 #include "config.h"
 
-#include "vzcm.h"
 #include "vsignal.h"
+
+#include "vzcm.h"
 
 #include "ZcmService.hpp"
 
@@ -27,7 +28,7 @@ class Publish
 public:
 
     /*!
-     * \param[in] fname Configuration settings.
+     * \param[in] conf Configuration settings.
      * \details Initialize _zcm node.
      */
     Publish( const Config& conf = {} );
