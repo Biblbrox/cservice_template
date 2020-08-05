@@ -16,4 +16,4 @@ include_args="$(cat ./compile_commands.json | grep command | sed "s/-I/\n-I/g" |
 
 checks=$(cat ../cfg/sanalyzer.cfg)
 
-clang-tidy -config="$checks" $main -p=. --header-filter="src/*" --quiet -- $include_args -std=c++17
+clang-tidy -config="$checks" $main -p=. --header-filter="src/*" -- $include_args -std=c++17

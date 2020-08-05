@@ -10,3 +10,6 @@
 [submodule "external/vzcm"]
 	path = external/vzcm
 	url = ssh://git@bb.niias:7999/~elapidae/vzcm.git
+[submodule "external/cpp_codestyle"]
+	path = external/cpp_codestyle
+	url = ssh://git@bb.niias:7999/tool/cpp_codestyle.git

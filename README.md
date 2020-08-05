@@ -45,7 +45,6 @@ Basic:<br>
 - [LCov (> 1.14)](http://ltp.sourceforge.net/coverage/lcov.php)
 - [GCov (>9.3)](https://linux.die.net/man/1/gcov)
 - [CLang-Tidy (> 10.0)](https://clang.llvm.org/extra/clang-tidy/)
-- [CLang-Format (> 10.0)](https://clang.llvm.org/docs/ClangFormat.html)
 - [Ninja (> 1.10)](https://ninja-build.org)
 
 Third-party (for visualization):<br>
@@ -107,7 +106,7 @@ You can find more scripts in [scripts/](./scripts).
 <a name="contributing"></a>
 ## 7. Contributing
 
-1. Fork it (<ssh://git@bb.niias:7999/tool/cservice_template.git>).
+1. Fork it (<http://bb.niias/projects/TOOL/repos/cservice_template/browse>).
 2. Read [Readme](./README.md), [License](./doc/LICENSE.md), [Code of Conduct](./doc/CODE_OF_CONDUCT.md) and [Condributing Guidelines][contributing].
 3. Create your fix or feature branch (`git checkout -b feature/name`).
 4. Make changes according to [Condributing Guidelines][contributing].

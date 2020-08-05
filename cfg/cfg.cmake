@@ -4,6 +4,7 @@ INCLUDE_DIRECTORIES( cfg )
 
 set( CFG
     cfg/cservice_template.cfg
+    cfg/sanalyzer.cfg
    )
 
 #========================================================================================
