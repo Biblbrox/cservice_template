@@ -23,3 +23,6 @@ doxygen*
 # Code coverage temporary files & folders
 coverage*
 !doc/img/coverage.png
+
+# CLang-Tidy static analyzer temporary files & folders
+.clang-format
