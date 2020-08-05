@@ -27,6 +27,6 @@ void Publish::send( const int64_t& rec, const ZcmService& data )
     msg.u_timestamp = data.u_timestamp;
     msg.processing_time = int32_t( vtime_point::now().microseconds().count() - rec );
 
-    _zcm.publish( _conf.send.ch, msg );
+    _zcm.publish( _conf.send.channel.full, msg );
 }
 //=======================================================================================

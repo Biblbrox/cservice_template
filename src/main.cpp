@@ -38,7 +38,7 @@
  *
  * \return App exit status.
  */
-int main( int argc, char **argv )
+int main(int argc, char **argv)
 {
     // Parse config && create PID
 

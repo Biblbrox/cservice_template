@@ -1,9 +1,0 @@
----
-Checks:          '-*,some-check'
-WarningsAsErrors: ''
-HeaderFilterRegex: ''
-FormatStyle:     none
-User:            user
-CheckOptions:
-  - key:   google-build-namespaces.HeaderFileExtensions
-	value: 'h,hpp'

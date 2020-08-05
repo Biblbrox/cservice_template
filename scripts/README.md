@@ -59,6 +59,14 @@ Scripts for app manipulating.
 
 ---
 
+- [codestyle.sh](codestyle.sh)
+
+    Checks code based on company code style.
+
+*Example:* ```./scripts/codestyle.sh```
+
+---
+
 - [doc.sh](doc.sh)
 
     Carries out auto-documenting of code according to Doxygen tags. For visualization, you can use any browser by first opening: <br/>
