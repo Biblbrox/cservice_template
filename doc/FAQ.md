@@ -10,6 +10,8 @@ The repository is designed as a microservice template for working with zcm data.
 I always wanted to have one at hand, since literally all of them are repeated. 
 Of the nice things are scripts for self-documentation and application testing with reporting generation.
 
+[See more](https://docs.google.com/presentation/d/1z1u0K08LDK4b8O-dDTnzsaE7yN4jyS3FLGR6AJOI1cM/edit?usp=sharing).
+
 ---
 
 ⌦ **To create a new repository, I will have to manually change its name in all files, where does it appear?**
@@ -29,13 +31,10 @@ To do this, you need to:
 - Clone new repo from *bb.niias/* :
 
 ```
-git clone ssh://git@bb.niias:7999/~d.leliuhin/new_service_name.git
-cd new_service_name
-git checkout develop
-
+git clone ssh://git@bb.niias:7999/~PROJECT_NAME/new_service_name.git --recurse-submodules -b master
 ```
 
-- Replace all cservice_template entries by new with preview:
+- Replace all **cservice_template** entries by new with preview:
 
 ```
 ./scripts/rename.sh cservice_template new_service_name
@@ -45,6 +44,18 @@ git checkout develop
 ```
 --@--:~/Desktop/template/new_service_name$ ./scripts/rename.sh cservice_template new_service_name
 Replacement from cservice_template to new_service_name done
+```
+
+
+```
+git checkout --orphan tmp
+git add . --all
+git commit -m "Initial commit"
+git branch -D master
+git remote set-url origin ssh://git@bb.niias:7999/~PROJECT_NAME/new_service_name.git
+git checkout -b master
+git push origin master
+git branch -D tmp
 ```
 
 - View the changelog:
