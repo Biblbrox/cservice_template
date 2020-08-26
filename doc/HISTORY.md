@@ -11,5 +11,6 @@
 | 1.2.1   | Fix     | Extra file.							    |
 | 1.2.2	  | Fix     | Update scripts.                                                       |
 | 1.2.3   | Fix     | New template class creation script.				    |
+| 1.2.4   | Fix	    | class.sh description. Readmes changes.				    |
 
 ---

@@ -54,7 +54,7 @@ git commit -m "Initial commit"
 git branch -D master
 git remote set-url origin ssh://git@bb.niias:7999/~PROJECT_NAME/new_service_name.git
 git checkout -b master
-git push origin master
+git push -f origin master
 git branch -D tmp
 ```
 
