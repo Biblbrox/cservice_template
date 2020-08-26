@@ -114,3 +114,27 @@ More [info](http://bb.niias/projects/TOOL/repos/cpp_codestyle/browse).
 | №3 (optional) | File display mode for modification | --preview          |
 
 ---
+
+- [rename.sh](class.sh)
+
+    Create a new directory with template files:
+
+| Argument      | Description                        | Example  |
+|---------------|------------------------------------|----------|
+| №1            | The class new name to be created   | NewClass |
+| №2            | Output directory path              | ./src    |
+
+After running: ```./scripts/class.sh NewClass ./src```
+
+```
+new_class/
+├── new_class.cmake
+├── new_class.cpp
+├── new_class.h
+└── README.md
+
+0 directories, 4 files
+
+```
+
+---
