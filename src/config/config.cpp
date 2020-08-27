@@ -89,10 +89,9 @@ void Config::_fill_ch()
 void Config::Logs::setup()
 {
     if ( !need_trace )
-    {
-        vlog::clear_executers();
         return;
-    }
+
+    vlog::clear_executers();
 
     if ( need_shared )
         vlog::set_shared_log( shared_name, file_sizes, rotates );
