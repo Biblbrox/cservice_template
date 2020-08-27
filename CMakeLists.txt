@@ -12,6 +12,7 @@ option( GUI FALSE )
 
 if ( GUI )
     set( CMAKE_BUILD_TYPE "Debug" )
+    add_definitions( -DGUI )
 else()
     set( CMAKE_BUILD_TYPE "Release" )
 endif()
