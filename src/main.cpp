@@ -51,6 +51,8 @@ int main( int argc, char **argv )
         config.logs.setup();
     }
 
+    int *i;
+
     //-----------------------------------------------------------------------------------
 
     // Link signals -> slots
