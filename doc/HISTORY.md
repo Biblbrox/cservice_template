@@ -13,5 +13,6 @@
 | 1.2.3   | Fix     | New template class creation script.				    |
 | 1.2.4   | Fix	    | class.sh description. Readmes changes.				    |
 | 1.2.5   | Fix     | Trace logger conditions. Add GUI cmake definitions.		    |
+| 1.2.6   | Fix     | Scripts. Rebase visualization. Remove extra sanalyzer flags.          |
 
 ---
