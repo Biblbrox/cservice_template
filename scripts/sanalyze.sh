@@ -7,14 +7,13 @@ else
     mkdir -p build
 fi
 
+files=$( find "$PWD/src" -path "$PWD/src/plot" -prune -false -o -name '*.cpp' -o -name '*.h' )
+
 cd build
 cmake -DGUI=OFF .. &>/dev/null
 
-main=$(find ../src/ -type d -name '*plot*' -prune -o -name '*.cpp' -o -name '*.h' )
-
-include_args="$(cat ./compile_commands.json | grep command | sed "s/-I/\n-I/g" | grep -v command | awk '{print $1}' | sed "s/-I/-I /g")"
+# include_args="$(cat ./compile_commands.json | grep command | sed "s/-I/\n-I/g" | grep -v command | awk '{print $1}' | sed "s/-I/-I /g")"
 
 checks=$(cat ../cfg/sanalyzer.cfg)
 
-clang-tidy -config="$checks" $main -p=. --header-filter="src/*" -- $include_args -I/usr/include/c++/8 -I/usr/include/x86_64-linux-gnu/c++/8 -pthread -std=c++11 -fexception -fPIC -std=gnu++17 2>/dev/null
-
+clang-tidy -config="$checks" $files -p=. 2>/dev/null
