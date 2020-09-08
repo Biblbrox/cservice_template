@@ -1,6 +1,7 @@
 #========================================================================================
 
-project( cservice_template )
+project( cservice_template
+    LANGUAGES CXX )
 
 #========================================================================================
 
@@ -44,26 +45,11 @@ include( ${CMAKE_CURRENT_SOURCE_DIR}/src/src.cmake )
 
 #========================================================================================
 
-find_program(
-    CLANG_TIDY_TOOL
-    clang-tidy
-    DOC "Path to clang-tidy executable" )
-
-file( READ cfg/sanalyzer.cfg CLANG_CHECKS )
-
-set( CLANG_TIDY_CMD ${CLANG_TIDY_TOOL} --checks='' --quiet )
-
-#message( ${CLANG_TIDY_CMD} )
-
 add_executable( ${PROJECT_NAME}
     src/main.cpp
     ${CFG}
     ${SRC}
     ${EXTERNAL} )
-
-set_target_properties( ${PROJECT_NAME}
-    PROPERTIES
-    CXX_CLANG_TIDY "${CLANG_TIDY_CMD}" )
 
 target_link_libraries( ${PROJECT_NAME}
     ${VTK_LIBRARIES}
