@@ -1,11 +1,11 @@
 #========================================================================================
 
-set( VLIBS_DIR ${CMAKE_CURRENT_LIST_DIR}/vlibs2 )
+set( VLIBS_DIR ${CMAKE_CURRENT_LIST_DIR}/VLib/src )
 
 #========================================================================================
 
-include_directories( ${VLIBS_DIR} )
-include_directories( ${VLIBS_DIR}/cmake )
+include_directories( ${VLIBS_DIR}/src )
+include_directories( ${VLIBS_DIR}/src/cmake )
 
 #========================================================================================
 

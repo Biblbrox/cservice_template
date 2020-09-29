@@ -10,3 +10,6 @@
 [submodule "external/cpp_codestyle"]
 	path = external/cpp_codestyle
 	url = ssh://git@bb.niias:7999/tool/cpp_codestyle.git
+[submodule "external/VLib"]
+	path = external/VLib
+	url = https://github.com/dleliuhin/VLib.git
