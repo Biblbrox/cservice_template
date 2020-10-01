@@ -15,5 +15,6 @@
 | 1.2.5   | Fix     | Trace logger conditions. Add GUI cmake definitions.		    |
 | 1.2.6   | Fix     | Scripts. Rebase visualization. Remove extra sanalyzer flags.          |
 | 1.2.7   | Fix     | Install script. GTest *so. build-gui script.                          |
+| 1.2.8   | Fix     | Add VLib GitHub submodule. Doc changes.				    |
 
 ---
