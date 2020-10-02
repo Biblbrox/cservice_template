@@ -16,8 +16,8 @@
 
 //=======================================================================================
 
-static constexpr uint log_size = 1e6;
-static constexpr uint log_rotates = 3U;
+static constexpr uint32_t log_size = 1e6;
+static constexpr uint16_t log_rotates = 3U;
 
 //=======================================================================================
 /*! \struct Channel
@@ -115,11 +115,11 @@ public:
         std::string shared_name = "$$FULL_APP.log";
         std::string leveled_path = "$$APP_PATH/logs";
 
-        uint file_sizes { log_size };
-        uint rotates = log_rotates;
+        uint32_t file_sizes { log_size };
+        uint16_t rotates { log_rotates };
 
-        bool need_trace { true };
-        bool need_shared { true };
+        bool need_trace   { true };
+        bool need_shared  { true };
         bool need_leveled { true };
 
         //-------------------------------------------------------------------------------
