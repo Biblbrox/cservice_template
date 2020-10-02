@@ -85,17 +85,17 @@ TEST( ConfigTest, test_by_default )
     ASSERT_EQ( "",    settings.subgroup( Config().send.str ).get( "prefix" ) );
     ASSERT_EQ( "",    settings.subgroup( Config().send.str ).get( "name" ) );
 
-    ASSERT_EQ( "true",    settings.subgroup( Config().logs.str ).get( "need_trace" ) );
-    ASSERT_EQ( "true",    settings.subgroup( Config().logs.str ).get( "need_shared" ) );
+    ASSERT_EQ( "true", settings.subgroup( Config().logs.str ).get( "need_trace" ) );
+    ASSERT_EQ( "true", settings.subgroup( Config().logs.str ).get( "need_shared" ) );
     ASSERT_EQ( "$$FULL_APP.log",
                settings.subgroup( Config().logs.str ).get( "shared_name" ) );
     ASSERT_EQ( "true", settings.subgroup( Config().logs.str ).get( "need_leveled" ) );
     ASSERT_EQ( "$$APP_PATH/logs",
                settings.subgroup( Config().logs.str ).get( "leveled_path" ) );
-    ASSERT_EQ( 1e6,
-               std::stoi( settings.subgroup( Config().logs.str ).get( "file_sizes" ) ) );
-    ASSERT_EQ( 3,
-               std::stoi( settings.subgroup( Config().logs.str ).get( "rotates" ) ) );
+    ASSERT_EQ( std::to_string( log_size ),
+               settings.subgroup( Config().logs.str ).get( "file_sizes" ) );
+    ASSERT_EQ( std::to_string( log_rotates ),
+               settings.subgroup( Config().logs.str ).get( "rotates" ) );
 }
 //=======================================================================================
 /*! \test TEST( ConfigTest, test_setup )
