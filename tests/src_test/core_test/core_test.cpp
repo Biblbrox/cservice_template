@@ -22,7 +22,7 @@ TEST( CoreTest, test_constructor )
     Pack pack;
 
     int count {0};
-    core.processed.link( [&]( const int64_t ts, const ZcmService& msg ){ ++count; } );
+    core.processed.link( [&]( const int64_t ts ){ ++count; } );
 
     core.run( pack );
 

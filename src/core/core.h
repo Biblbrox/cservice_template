@@ -46,9 +46,8 @@ public:
     /*!
      * \brief emit signal if pack processed.
      * \param int64_t Raw data timestamp.
-     * \param ZcmService Service message.
      */
-    vsignal<int64_t, ZcmService> processed;
+    vsignal<int64_t> processed;
 
 #ifdef GUI
     /*! \brief Send data to visualizer.

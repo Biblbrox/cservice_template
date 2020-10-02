@@ -32,7 +32,6 @@ TEST( PublishTest, test_send )
 
     Publish publisher( conf );
 
-    ZcmService msg;
-    publisher.send( 0, msg );
+    publisher.send(0);
 }
 //=======================================================================================

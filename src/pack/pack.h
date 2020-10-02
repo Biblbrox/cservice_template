@@ -11,24 +11,13 @@
 
 #include "defs.h"
 
-#include "ZcmService.hpp"
-
 //=======================================================================================
 /*! \class Data
- * \brief ZCM message wrapper class.
+ * \brief Message wrapper class.
  */
-class Data : ZcmService
+class Data
 {
 public:
-
-    /*! \fn Data & operator =( const ZcmService& data );
-     * \brief Convert ZcmService data to custom format.
-     * \param[in] data Message data.
-     * \return Overloaded data;
-     */
-    Data & operator =( const ZcmService& data );
-
-    //-----------------------------------------------------------------------------------
 
     /*! \fn void clear();
      * \brief Clear data members.
