@@ -16,8 +16,6 @@
 
 #include "vsignal.h"
 
-#include "vzcm.h"
-
 //=======================================================================================
 /*! \class Subscribe
  * \brief ZCM message subscriber class.
@@ -49,9 +47,6 @@ private:
 
     //! \brief Configuration parameters.
     Config _conf;
-
-    //! \brief ZCM node.
-    vzcm _zcm;
 
     //! \brief Data aggregated from multiple sensors.
     Pack _pack;

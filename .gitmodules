@@ -1,15 +1,9 @@
-[submodule "external/zcm_types"]
-	path = external/zcm_types
-	url = ssh://git@bb.niias:7999/ado/zcm_types.git
-[submodule "external/niias_srv_supply"]
-	path = external/niias_srv_supply
-	url = ssh://git@bb.niias:7999/tool/niias_srv_supply.git
-[submodule "external/vzcm"]
-	path = external/vzcm
-	url = ssh://git@bb.niias:7999/~elapidae/vzcm.git
-[submodule "external/cpp_codestyle"]
-	path = external/cpp_codestyle
-	url = ssh://git@bb.niias:7999/tool/cpp_codestyle.git
 [submodule "external/VLib"]
 	path = external/VLib
 	url = https://github.com/dleliuhin/VLib.git
+[submodule "external/args_parser"]
+	path = external/args_parser
+	url = https://github.com/dleliuhin/args_parser.git
+[submodule "external/cpp_codestyle"]
+	path = external/cpp_codestyle
+	url = https://github.com/dleliuhin/cpp_codestyle.git

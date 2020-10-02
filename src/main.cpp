@@ -18,12 +18,10 @@
 #include "view.h"
 #endif
 
-#include "niias_arguments.h"
+#include "args_parser/arguments.h"
 
 #include "vapplication.h"
 #include "vthread.h"
-
-#include "vzcm.h"
 
 #include <iostream>
 
@@ -42,12 +40,12 @@ int main( int argc, char **argv )
 {
     // Parse config && create PID
 
-    niias::arguments nargs( argc, argv,
-                            "cservice_template - JSC NIIAS",
+    service::arguments sargs( argc, argv,
+                            "cservice_template",
                             Config::by_default() );
     Config config;
     {
-        config.capture( nargs.settings() );
+        config.capture( sargs.settings() );
         config.logs.setup();
     }
 
@@ -71,7 +69,7 @@ int main( int argc, char **argv )
     vthread thread;
     thread.invoke( [&]
     {
-        View viewer( nargs.app_name() );
+        View viewer( sargs.app_name() );
         core.plot_data.link( &viewer, &View::plot );
         viewer.run();
     } );

@@ -27,15 +27,8 @@ TEST( PackTest, test_clear )
  */
 TEST( PackTest, test_operator_eq )
 {
-    ZcmService msg;
-    {
-        msg.u_timestamp = 1;
-        msg.processing_time = 1;
-    }
-
     Data data;
-    data = msg;
 
-    ASSERT_EQ( 1, data.timestamp() );
+    ASSERT_EQ( 0, data.timestamp() );
 }
 //=======================================================================================

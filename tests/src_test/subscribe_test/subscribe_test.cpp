@@ -36,7 +36,6 @@ TEST( SubscribeTest, test_receive )
     Subscribe sub( config );
 
     Publish pub( config );
-    ZcmService msg;
-    pub.send( 0, msg );
+    pub.send(0);
 }
 //=======================================================================================

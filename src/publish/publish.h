@@ -15,10 +15,6 @@
 
 #include "vsignal.h"
 
-#include "vzcm.h"
-
-#include "ZcmService.hpp"
-
 //=======================================================================================
 /*! \class Publish
  * \brief ZCM message publisher class.
@@ -41,9 +37,8 @@ public:
     /*! \fn void send( const int64_t& rec, const ZcmService& data );
      * \brief send processed data to ZCM.
      * \param[in] rec raw timestamp.
-     * \param[in] data from ZCM bus.
      */
-    void send( const int64_t& rec, const ZcmService& data );
+    void send( const int64_t& rec );
 
     //-----------------------------------------------------------------------------------
 
@@ -51,9 +46,6 @@ private:
 
     //! \brief Configuration parameters.
     Config _conf;
-
-    //! \brief ZCM node.
-    vzcm _zcm;
 
 };
 //=======================================================================================
